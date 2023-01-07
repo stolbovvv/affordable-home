@@ -33,7 +33,7 @@ const handleViews = () => {
   return gulp
     .src(`${dir.source}/**/*.html`)
     .pipe(gulp.dest(`${dir.build}`))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream({ once: true }));
 };
 
 // Task: styles
@@ -107,11 +107,12 @@ const runWatch = () => {
   gulp.watch([`${dir.source}/scripts/**/*.js`], gulp.series(handleScripts));
   gulp.watch(
     [
-      `${dir.source}/{fonts,images}/**/*`,
+      `${dir.source}/fonts/**/*`,
+      `${dir.source}/images/**/*`,
       `${dir.source}/{site.webmanifest,favicon.ico}`,
       `${dir.source}/{favicon*,android*,apple*}.png`,
     ],
-    gulp.series(browserSync.reload),
+    gulp.series(handleCopy),
   );
 };
 

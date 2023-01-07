@@ -9,6 +9,12 @@
 
   "overrides": [
     {
+      "files": ["*.html"],
+      "options": {
+        "printWidth": 140
+      }
+    },
+    {
       "files": ["*.css", "*.sass", "*.scss", "*.less"],
       "options": {
         "singleQuote": false
