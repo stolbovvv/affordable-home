@@ -2,3 +2,73 @@
 @use "../tools/mixins" as *;
 
 /* Icon font classes */
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "user-icon-font" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--caret-down:before {
+  content: "\e900";
+}
+.icon--caret-left:before {
+  content: "\e901";
+}
+.icon--caret-right:before {
+  content: "\e902";
+}
+.icon--caret-up:before {
+  content: "\e903";
+}
+.icon--colse:before {
+  content: "\e904";
+}
+.icon--email:before {
+  content: "\e905";
+}
+.icon--filter-fill:before {
+  content: "\e906";
+}
+.icon--filter-outline:before {
+  content: "\e907";
+}
+.icon--hamburger:before {
+  content: "\e908";
+}
+.icon--heart-fill:before {
+  content: "\e909";
+}
+.icon--heart-outline:before {
+  content: "\e90a";
+}
+.icon--map-pin-fill:before {
+  content: "\e90b";
+}
+.icon--map-pin-outline:before {
+  content: "\e90c";
+}
+.icon--phone-fill:before {
+  content: "\e90d";
+}
+.icon--phone-outline:before {
+  content: "\e90e";
+}
+.icon--search:before {
+  content: "\e90f";
+}
+.icon--telegram:before {
+  content: "\e910";
+}
+.icon--vk:before {
+  content: "\e911";
+}

@@ -1,6 +1,33 @@
-@use '../tools/config' as *;
-@use '../tools/mixins' as *;
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
 
 /* Connect base fonts */
 
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/rubik/Rubik-Regular.woff2") format("woff2"),
+    url("../fonts/rubik/Rubik-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/rubik/Rubik-SemiBold.woff2") format("woff2"),
+    url("../fonts/rubik/Rubik-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Connect icon fonts */
+
+@font-face {
+  font-family: "user-icon-font";
+  src: url("../fonts/user-icon-font/user-icon-font.woff2") format("woff2"),
+    url("../fonts/user-icon-font/user-icon-font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

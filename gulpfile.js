@@ -103,7 +103,7 @@ const runServer = () => {
 // Task: run watch
 const runWatch = () => {
   gulp.watch([`${dir.source}/**/*.html`], gulp.series(handleViews));
-  gulp.watch([`${dir.source}/styles/**/*.css`], gulp.series(handleStyles));
+  gulp.watch([`${dir.source}/styles/**/*.scss`], gulp.series(handleStyles));
   gulp.watch([`${dir.source}/scripts/**/*.js`], gulp.series(handleScripts));
   gulp.watch(
     [
