@@ -5,16 +5,19 @@
 @use "./base/reset";
 @use "./base/base";
 @use "./base/icons";
+@use "./base/typography";
 
 // 2. Components & Blocks
 @use "./blocks/links";
 @use "./blocks/buttons";
+@use "./blocks/breadcrumbs";
 @use "./blocks/logo";
 @use "./blocks/menu";
 
 // 3. Layout-related sections
 @use "./layouts/header";
 @use "./layouts/footer";
+@use "./layouts/page-head";
 
 // 4. Page-specific styles
 @use "./pages/home";

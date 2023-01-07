@@ -1,0 +1,40 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.page-head {
+  padding: 10px 0 0 0;
+
+  @include for-min-size("md") {
+    padding: 30px 0 0 0;
+  }
+
+  @include for-min-size("md") {
+    padding: 60px 0 0 0;
+  }
+
+  &__row {
+    margin: 16px 0 0 0;
+
+    @include for-min-size("md") {
+      display: flex;
+
+      > * + * {
+        margin: 0 0 0 32px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    @include for-min-size("md") {
+      font-size: 32px;
+    }
+
+    @include for-min-size("lg") {
+      font-size: 38px;
+    }
+  }
+}

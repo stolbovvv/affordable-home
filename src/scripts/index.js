@@ -1,3 +1,1 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // User scripts
-});
+document.addEventListener('DOMContentLoaded', () => {});
