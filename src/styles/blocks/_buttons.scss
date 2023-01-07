@@ -1,2 +1,98 @@
-@use '../tools/config' as *;
-@use '../tools/mixins' as *;
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary,
+.button-secondary {
+  padding: 13px 22px 11px 22px;
+  border-radius: 4px;
+
+  > * + * {
+    margin: 0 0 0 10px;
+  }
+
+  > i {
+    font-size: 20px;
+
+    @include for-min-size("md") {
+      font-size: 24px;
+    }
+  }
+
+  > span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  @include for-min-size("md") {
+    padding: 18px 28px 16px 28px;
+  }
+}
+
+.button-primary {
+  background-color: $clr-accent;
+  background-image: $btn-liner-accent;
+  background-position: left center;
+  background-size: 200% 100%;
+  transition: all 0.25s ease 0s;
+  color: $clr-white;
+
+  &:hover {
+    background-position: right center;
+  }
+
+  > span {
+    color: $clr-white;
+  }
+}
+
+.button-secondary {
+  border: 1px solid rgba($color: $clr-accent, $alpha: 0.6);
+  background: none;
+  color: $clr-accent;
+  transition: all 0.25s ease 0s;
+
+  &:hover {
+    background: $clr-accent;
+    color: $clr-white;
+  }
+
+  &--white {
+    border: 1px solid rgba($color: $clr-white, $alpha: 0.6);
+    color: $clr-white;
+
+    &:hover {
+      background: $clr-white;
+      color: $clr-primary;
+    }
+  }
+}
+
+.button-round {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  @include for-min-size("lg") {
+    width: 70px;
+    height: 70px;
+  }
+
+  &--white {
+    background: $clr-white;
+    color: $clr-primary;
+    font-size: 24px;
+  }
+}

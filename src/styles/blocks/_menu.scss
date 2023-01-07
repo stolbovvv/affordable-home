@@ -1,0 +1,200 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+/* menu: primary */
+
+.menu-primary {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(100%);
+  padding: 60px 40px 20px 15px;
+  background-color: $clr-primary;
+  background-image: url("../images/decor/house-transparent.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+
+  &--show {
+    transform: translateX(0%);
+  }
+
+  @include for-min-size("md") {
+    max-width: 480px;
+  }
+
+  @include for-min-size("lg") {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    max-width: none;
+    padding: 18px 0px 18px 0px;
+    background: none;
+    transform: translateX(0%);
+  }
+
+  &__button-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    color: $clr-white;
+    font-size: 24px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+
+    > * + * {
+      margin: 20px 0 0 0;
+    }
+
+    @include for-min-size("lg") {
+      display: flex;
+      align-items: center;
+
+      > * + * {
+        margin: 0 0 0 24px;
+      }
+    }
+  }
+
+  &__link {
+    color: $clr-white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.2;
+
+    @include for-min-size("lg") {
+      font-size: 14px;
+      line-height: 1.2;
+
+      &:hover {
+        color: $clr-gray;
+      }
+    }
+  }
+
+  &__social-container {
+    display: flex;
+    align-items: center;
+    margin: 40px 0 0 0;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__link-icon {
+    font-size: 24px;
+    text-decoration: none;
+    color: $clr-white;
+  }
+
+  &__button-send-container {
+    margin: 40px 0 0 0;
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__app-container {
+    display: none;
+
+    @include for-min-size("lg") {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 auto;
+
+      > * + * {
+        margin: 0 0 0 24px;
+      }
+    }
+  }
+
+  &__app-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__app-link {
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: none;
+    color: $clr-white;
+
+    &:hover {
+      color: $clr-gray;
+    }
+  }
+
+  &__app-icon {
+    margin: 0 0 0 12px;
+    font-size: 24px;
+    color: $clr-white;
+
+    &--accent {
+      color: $clr-accent;
+    }
+  }
+
+  &__app-count {
+    margin: 0 0 0 6px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: $clr-white;
+  }
+}
+
+/* menu: secondary */
+.menu-secondary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  > * + * {
+    margin: 0 0 0 30px;
+  }
+
+  &__list {
+    flex: 0 0 calc(50% - 15px);
+    list-style-type: none;
+
+    > * + * {
+      margin: 12px 0 0 0;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $clr-white;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.25 ease-out 0s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

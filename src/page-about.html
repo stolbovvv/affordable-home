@@ -34,13 +34,12 @@
               <div class="header__logo">
                 <div class="site-logo">
                   <a class="site-logo__link" href="./"><img src="./images/logo/site-logo--primary.svg" alt="Доступный Дом" /></a>
-                  <p class="site-logo__text">Купить дом в Москве</p>
+                  <p class="site-logo__text">Купить дом в Москве</p>
                 </div>
               </div>
               <div class="header__call-container">
                 <p class="header__call-phone"><i class="icon--phone-fill"></i><span>7 (912) 542-40-40</span></p>
-                <a class="header__call-link-text" href="tel:+79125424040">Позвонить менеджеру</a>
-                <a class="header__call-link-icon" href="tel:+79125424040"></a>
+                <a class="header__call-link" href="tel:+79125424040"><i class="icon--phone-fill"></i><span>Позвонить менеджеру</span></a>
               </div>
               <div class="header__social-container">
                 <a class="header__social-link-icon" href="https://vk.com/" target="_blank"><i class="icon--vk"></i></a>
@@ -50,8 +49,8 @@
                 <a class="header__app-link-icon" href="page-map.html"><i class="icon--map-pin-fill"></i></a>
                 <a class="header__app-link-icon" href="page-favourites.html"><i class="icon--heart-outline"></i></a>
               </div>
-              <button class="header__button-menu button-open-menu" data-open-menu="priamry-menu"><i class="icon--hamburger"></i></button>
-              <button class="header__button-send button-primary" data-open-modal="modal-send">Оставить заявку</button>
+              <button class="header__button-menu button" data-open-menu="priamry-menu"><i class="icon--hamburger"></i></button>
+              <button class="header__button-send button button-primary" data-open-modal="modal-send"><span>Оставить заявку</span></button>
             </div>
           </div>
         </section>
@@ -72,7 +71,11 @@
                 <a class="menu-primary__link-icon" href="https://vk.com/"><i class="icon--vk"></i></a>
                 <a class="menu-primary__link-icon" href="https://telegram.org/"><i class="icon--telegram"></i></a>
               </div>
-              <button class="menu-primary__button-send button-secondary button-secondary--white">Оставить заявку</button>
+              <div class="menu-primary__button-send-container">
+                <button class="button button-secondary button-secondary--white" data-open-modal="modal-send">
+                  <span>Оставить заявку</span>
+                </button>
+              </div>
               <div class="menu-primary__app-container">
                 <div class="menu-primary__app-item">
                   <a class="menu-primary__app-link" href="page-map.html">Карта</a>
@@ -80,7 +83,7 @@
                 </div>
                 <div class="menu-primary__app-item">
                   <a class="menu-primary__app-link" href="page-favourites.html">Избранное</a>
-                  <i class="menu-primary__app-icon icon--heart-fill"></i>
+                  <i class="menu-primary__app-icon menu-primary__app-icon--accent icon--heart-fill"></i>
                   <span class="menu-primary__app-count">1</span>
                 </div>
               </div>
@@ -115,15 +118,11 @@
                   <p class="site-logo__text site-logo__text--white">Купить дом в Москве</p>
                 </div>
               </div>
-              <div class="header__social-container">
-                <a class="header__link-icon" href="https://vk.com/"></a>
-                <a class="header__link-icon" href="https://telegram.org/"></a>
-              </div>
               <div class="footer__social">
                 <p class="footer__social-label">Наши социальные сети:</p>
                 <div class="footer__social-container">
-                  <a class="footer__social-link" href="#"><i class="icon-font-vk"></i></a>
-                  <a class="footer__social-link" href="#"><i class="icon-font-telegram"></i></a>
+                  <a class="footer__social-link" href="#"><i class="icon--vk"></i></a>
+                  <a class="footer__social-link" href="#"><i class="icon--telegram"></i></a>
                 </div>
               </div>
             </div>
@@ -152,12 +151,12 @@
               </div>
             </div>
             <div class="footer__controls">
-              <button class="button-primary" data-open-modal="modal-send">Оставить заявку</button>
-              <button class="button-round button-round--white"><i class="icon--caret-up"></i></button>
+              <button class="button button-primary" data-open-modal="modal-send"><span>Оставить заявку</span></button>
+              <button class="button button-round button-round--white"><i class="icon--caret-up"></i></button>
             </div>
           </div>
           <div class="footer__row">
-            <p class="footer__cpoyright">© 2022 Все права защищены.</p>
+            <p class="footer__copyright">© 2022 Все права защищены.</p>
             <a class="footer__policy" href="page-policy.html">Политика конфиденциальности</a>
             <p class="footer__team">Made by <a href="https://goweb.pro/" target="_blank">GoWeb.Pro</a></p>
           </div>

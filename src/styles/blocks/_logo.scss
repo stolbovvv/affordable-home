@@ -1,0 +1,41 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+/* logo */
+
+.site-logo {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    flex: 0 0 auto;
+    text-decoration: none;
+
+    > img {
+      width: 69px;
+      height: 43px;
+
+      @include for-min-size("lg") {
+        width: 89px;
+        height: 56px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    display: none;
+
+    &--white {
+      color: $clr-white;
+    }
+
+    @include for-min-size("md") {
+      display: inline-block;
+      margin: 0 0 0 20px;
+      padding: 0 0 0 20px;
+      border-left: 1px solid $clr-gray;
+      max-width: 150px;
+    }
+  }
+}

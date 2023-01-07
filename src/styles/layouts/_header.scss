@@ -1,2 +1,163 @@
-@use '../tools/config' as *;
-@use '../tools/mixins' as *;
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+/* header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $clr-primary;
+  background-image: $liner-primary;
+
+  &__head {
+    background: $clr-white;
+    padding: 10px 0 10px 0;
+
+    @include for-min-size("md") {
+      padding: 20px 0 10px 0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin: 0 32px 0 0;
+  }
+
+  &__call-container {
+    margin: 0 0 0 auto;
+  }
+
+  &__call-phone {
+    display: none;
+
+    @include for-min-size("lg") {
+      display: flex;
+      align-items: center;
+
+      > i {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      > span {
+        margin: 0 0 0 10px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  &__call-link {
+    color: inherit;
+    text-decoration: none;
+
+    > i {
+      font-size: 24px;
+      color: $clr-primary;
+
+      @include for-min-size("lg") {
+        display: none;
+      }
+    }
+
+    > span {
+      display: none;
+
+      @include for-min-size("lg") {
+        display: inline-block;
+        margin: 4px 0 0 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.2;
+        color: $clr-primary;
+        border-bottom: 1px dashed $clr-primary;
+
+        &:hover {
+          border-bottom: 1px solid $clr-primary;
+        }
+      }
+    }
+  }
+
+  &__social-container {
+    display: none;
+
+    @include for-min-size("lg") {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 30px;
+
+      > * + * {
+        margin: 0 0 0 8px;
+      }
+    }
+  }
+
+  &__social-link-icon {
+    font-size: 24px;
+    color: $clr-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $clr-accent;
+    }
+  }
+
+  &__app-container {
+    display: flex;
+    margin: 0 0 0 8px;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__app-link-icon {
+    font-size: 24px;
+    color: $clr-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $clr-accent;
+    }
+  }
+
+  &__button-menu {
+    display: inline-block;
+    margin: 0 0 0 16px;
+    font-size: 24px;
+    color: $clr-accent;
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__button-send {
+    display: none;
+
+    @include for-min-size("md") {
+      display: flex;
+      margin: 0 0 0 30px;
+    }
+  }
+
+  &__menu {
+    @include for-min-size("lg") {
+      background-color: $clr-primary;
+      background-image: $liner-primary;
+    }
+  }
+}

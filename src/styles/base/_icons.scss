@@ -16,6 +16,10 @@ i {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &::before {
+    display: flex;
+  }
 }
 
 .icon--caret-down:before {

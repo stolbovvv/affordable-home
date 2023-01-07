@@ -9,6 +9,8 @@
 // 2. Components & Blocks
 @use "./blocks/links";
 @use "./blocks/buttons";
+@use "./blocks/logo";
+@use "./blocks/menu";
 
 // 3. Layout-related sections
 @use "./layouts/header";
