@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use './config' as *;
+
+// Media query mixin
+@mixin for-min-size($size) {
+  @if map.has-key($breakpoint-list, $size) {
+    @media only screen and (min-width: #{map.get($breakpoint-list, $size)}) {
+      @content;
+    }
+  } @else {
+    @error "Unfortunately, no value could be retrieved from `#{$size}`. "
+         + "Available breakpoints are: #{map.keys($breakpoint-list)}.";
+  }
+}
+
+@mixin for-max-size($size) {
+  @if map.has-key($breakpoint-list, $size) {
+    @media only screen and (max-width: #{map.get($breakpoint-list, $size) - 1}) {
+      @content;
+    }
+  } @else {
+    @error "Unfortunately, no value could be retrieved from `#{$size}`. "
+         + "Available breakpoints are: #{map.keys($breakpoint-list)}.";
+  }
+}

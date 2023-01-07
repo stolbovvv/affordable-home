@@ -1,0 +1,22 @@
+// Setting: breakpoints
+$breakpoint-list: (
+  "xl": 1280px,
+  "lg": 1024px,
+  "md": 768px,
+  "sm": 480px,
+  "xs": 320px,
+) !default;
+
+// Setting: container
+$container-width: 1250px;
+$container-padding: 15px;
+
+// Setting: colors
+$clr-black: #000000;
+$clr-white: #ffffff;
+
+// Settongs: fonts
+$ff-system: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", sans-serif;
+$ff-native: "Arial", sans-serif;
+$fs-native: 16px;
+$fw-native: 400;

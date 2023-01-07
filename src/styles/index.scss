@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+// 1. Base stuff
+@use "./base/fonts";
+@use "./base/reset";
+@use "./base/base";
+@use "./base/icons";
+
+// 2. Components & Blocks
+@use "./blocks/links";
+@use "./blocks/buttons";
+
+// 3. Layout-related sections
+@use "./layouts/header";
+@use "./layouts/footer";
+
+// 4. Page-specific styles
+@use "./pages/home";
