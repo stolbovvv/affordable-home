@@ -1,0 +1,72 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.stages {
+  position: relative;
+  padding: 30px 0 30px 0;
+  background-color: $clr-primary;
+  background-image: $liner-primary;
+  overflow: hidden;
+
+  @include for-min-size("md") {
+    padding: 60px 0 60px 0;
+  }
+
+  @include for-min-size("lg") {
+    padding: 80px 0 80px 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    padding: 0 0 32% 0;
+    background-image: url("../images/decor/house-transparent.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    color: $clr-white;
+  }
+
+  &__row {
+    @include for-min-size("md") {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin: 16px 0 0 0;
+    }
+  }
+
+  &__description {
+    margin: 16px 0 0 0;
+    color: $clr-white;
+
+    @include for-min-size("md") {
+      max-width: 600px;
+      margin: 0 0 0 0;
+      font-size: 16px;
+    }
+  }
+
+  &__slider {
+    margin: 24px 0 0 0;
+  }
+
+  &__list {
+    @include for-min-size("md") {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 30px;
+    }
+
+    @include for-min-size("lg") {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

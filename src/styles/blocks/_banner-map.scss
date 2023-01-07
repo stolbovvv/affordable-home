@@ -1,0 +1,50 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.banner-map {
+  padding: 15px 0 30px 0;
+  background-color: $clr-primary;
+  background-image: $liner-primary;
+
+  @include for-min-size("md") {
+    padding: 15px 0 15px 0;
+  }
+
+  &__inner {
+    @include for-min-size("md") {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    flex: 0 0 calc(50% - 0px);
+  }
+
+  &__image {
+    width: 100%;
+
+    @include for-min-size("md") {
+      margin: 0 0 0 -120px;
+    }
+  }
+
+  &__title {
+    color: $clr-white;
+  }
+
+  &__description {
+    margin: 24px 0 0 0;
+    color: $clr-white;
+    line-height: 1.2;
+
+    @include for-min-size("md") {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    margin: 24px 0 0 0;
+  }
+}

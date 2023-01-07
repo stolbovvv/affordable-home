@@ -13,6 +13,14 @@
 @use "./blocks/breadcrumbs";
 @use "./blocks/logo";
 @use "./blocks/menu";
+@use "./blocks/slider";
+@use "./blocks/cards";
+@use "./blocks/filter-hero";
+@use "./blocks/banner-hero";
+@use "./blocks/banner-map";
+@use "./blocks/carousel";
+@use "./blocks/stages";
+@use "./blocks/about";
 
 // 3. Layout-related sections
 @use "./layouts/header";

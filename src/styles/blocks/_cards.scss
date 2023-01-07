@@ -1,0 +1,153 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.card-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 4px;
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    padding: 0 0 56.2162% 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__thumbnail-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    margin: 18px 0 0 0;
+
+    > * + * {
+      margin: 8px 0 0 0;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: $clr-primary;
+
+    @include for-min-size("md") {
+      font-size: 16px;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__text {
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin: 18px 0 0 0;
+
+    > * + * {
+      margin: 0 0 0 24px;
+    }
+
+    > .button:nth-child(2) {
+      @include for-max-size("md") {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      > i + span {
+        @include for-max-size("md") {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    color: $clr-white;
+    padding: 8px 16px 8px 16px;
+    min-width: 124px;
+    border-radius: 0 0 0 4px;
+    background: $clr-primary;
+    text-align: center;
+  }
+}
+
+.card-stages {
+  display: flex;
+  padding: 24px 24px 24px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+
+  > * + * {
+    margin: 0 0 0 14px;
+  }
+
+  &__col {
+  }
+
+  &__num {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1875;
+    letter-spacing: 0.05em;
+    color: $clr-white;
+    opacity: 0.5;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.15;
+    color: $clr-white;
+  }
+
+  &__descr {
+    margin: 12px 0 0 0;
+    color: $clr-white;
+  }
+}
+
+.card-about {
+  padding: 16px 16px 16px 16px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: $clr-primary;
+  background-image: $liner-primary;
+
+  > * + * {
+    margin: 16px 0 0 0;
+    display: inline-block;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1875;
+    color: $clr-white;
+  }
+
+  &__descr {
+    color: $clr-white;
+  }
+}

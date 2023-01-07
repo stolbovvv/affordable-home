@@ -1,2 +1,11 @@
 @use "../tools/config" as *;
 @use "../tools/mixins" as *;
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+
+  @include for-min-size("md") {
+    font-size: 42px;
+  }
+}
