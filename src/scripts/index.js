@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function initMenu(menuClass) {
     const body = document.body;
     const menu = document.querySelector(`.${menuClass}`);
+
+    if (!menu) return;
+
     const open = document.querySelector(`[data-open-menu=${menu.id}]`);
     const close = document.querySelector(`[data-close-menu=${menu.id}]`);
 
@@ -57,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // filter init
   function initFilter(filterClass) {
     const filter = document.querySelector(`.${filterClass}`);
+
+    if (!filter) return;
+
     const buttons = filter.querySelectorAll(`.${filterClass}__button`);
     const dropdowns = filter.querySelectorAll(`.${filterClass}__dropdown`);
 
