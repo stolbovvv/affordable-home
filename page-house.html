@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="styles/index.min.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header">
+    <div class="wrapper" id="page-wrapper">
+      <header class="header" id="page-header">
         <section class="header__head">
           <div class="container">
             <div class="header__row">
@@ -57,7 +57,7 @@
         <section class="header__menu">
           <div class="container">
             <nav class="menu-primary" id="menu-primary">
-              <button class="menu-primary__button-close"><i class="icon--colse"></i></button>
+              <button class="menu-primary__button-close" data-close-menu="menu-primary"><i class="icon--colse"></i></button>
               <ul class="menu-primary__list">
                 <li><a class="menu-primary__link" href="page-catalog.html">Каталог</a></li>
                 <li><a class="menu-primary__link" href="page-rent.html">Аренда с выкупом</a></li>
@@ -105,6 +105,210 @@
             </div>
           </div>
         </section>
+
+        <div class="container">
+          <div class="columns">
+            <div class="columns__content"></div>
+            <div class="columns__sidebar"></div>
+          </div>
+
+          <div class="columns">
+            <div class="columns__content">
+              <section class="carousel">
+                <h2 class="carousel__title title">Отзывы наших покупателей:</h2>
+                <div class="carousel__slider slider" data-slider="review">
+                  <div class="slider__container">
+                    <div class="slider__item">
+                      <article class="card-review">
+                        <div class="card-review__head">
+                          <img class="card-review__photo" src="images/content/avatar.jpg" alt="" />
+                          <span class="card-review__name">Игорь</span>
+                        </div>
+                        <p class="card-review__text">
+                          Я вот свою квартиру продавала когда, тоже на переписки не шла. Это бесконечная эпопея. А люди ковыряют каждое
+                          слово. Даже когда с родными переписываешься, бывает, "прочитают не с той интонацией". Разве можно так дом
+                          продавать? Тем более в их мпсштабах. Это не серьёзно. Серьезные приежжают и смотрят, сразу вопросы решая основные,
+                          а потом звонят за уточнениями. Да и когда менеджерам переписываться?
+                        </p>
+                      </article>
+                    </div>
+                    <div class="slider__item">
+                      <article class="card-review">
+                        <div class="card-review__head">
+                          <img class="card-review__photo" src="images/content/avatar.jpg" alt="" />
+                          <span class="card-review__name">Игорь</span>
+                        </div>
+                        <p class="card-review__text">
+                          Я вот свою квартиру продавала когда, тоже на переписки не шла. Это бесконечная эпопея. А люди ковыряют каждое
+                          слово. Даже когда с родными переписываешься, бывает, "прочитают не с той интонацией". Разве можно так дом
+                          продавать? Тем более в их мпсштабах. Это не серьёзно. Серьезные приежжают и смотрят, сразу вопросы решая основные,
+                          а потом звонят за уточнениями. Да и когда менеджерам переписываться?
+                        </p>
+                      </article>
+                    </div>
+                    <div class="slider__item">
+                      <article class="card-review">
+                        <div class="card-review__head">
+                          <img class="card-review__photo" src="images/content/avatar.jpg" alt="" />
+                          <span class="card-review__name">Игорь</span>
+                        </div>
+                        <p class="card-review__text">
+                          Я вот свою квартиру продавала когда, тоже на переписки не шла. Это бесконечная эпопея. А люди ковыряют каждое
+                          слово. Даже когда с родными переписываешься, бывает, "прочитают не с той интонацией". Разве можно так дом
+                          продавать? Тем более в их мпсштабах. Это не серьёзно. Серьезные приежжают и смотрят, сразу вопросы решая основные,
+                          а потом звонят за уточнениями. Да и когда менеджерам переписываться?
+                        </p>
+                      </article>
+                    </div>
+                    <div class="slider__item">
+                      <article class="card-review">
+                        <div class="card-review__head">
+                          <img class="card-review__photo" src="images/content/avatar.jpg" alt="" />
+                          <span class="card-review__name">Игорь</span>
+                        </div>
+                        <p class="card-review__text">
+                          Я вот свою квартиру продавала когда, тоже на переписки не шла. Это бесконечная эпопея. А люди ковыряют каждое
+                          слово. Даже когда с родными переписываешься, бывает, "прочитают не с той интонацией". Разве можно так дом
+                          продавать? Тем более в их мпсштабах. Это не серьёзно. Серьезные приежжают и смотрят, сразу вопросы решая основные,
+                          а потом звонят за уточнениями. Да и когда менеджерам переписываться?
+                        </p>
+                      </article>
+                    </div>
+                    <div class="slider__item">
+                      <article class="card-review">
+                        <div class="card-review__head">
+                          <img class="card-review__photo" src="images/content/avatar.jpg" alt="" />
+                          <span class="card-review__name">Игорь</span>
+                        </div>
+                        <p class="card-review__text">
+                          Я вот свою квартиру продавала когда, тоже на переписки не шла. Это бесконечная эпопея. А люди ковыряют каждое
+                          слово. Даже когда с родными переписываешься, бывает, "прочитают не с той интонацией". Разве можно так дом
+                          продавать? Тем более в их мпсштабах. Это не серьёзно. Серьезные приежжают и смотрят, сразу вопросы решая основные,
+                          а потом звонят за уточнениями. Да и когда менеджерам переписываться?
+                        </p>
+                      </article>
+                    </div>
+                  </div>
+
+                  <div class="slider__navigations">
+                    <button class="slider__button-prev button button-round button-round--outline"><i class="icon--caret-left"></i></button>
+                    <button class="slider__button-next button button-round button-round--outline"><i class="icon--caret-right"></i></button>
+                    <div class="slider__progress"><span></span></div>
+                  </div>
+                </div>
+              </section>
+              <section class="carousel">
+                <h2 class="carousel__title title">Похожие дома по запросу:</h2>
+                <div class="carousel__slider slider" data-slider="base">
+                  <div class="slider__container">
+                    <div class="slider__item">
+                      <article class="card-product">
+                        <div class="card-product__thumbnail">
+                          <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                        </div>
+                        <div class="card-product__content">
+                          <p class="card-product__price">1 450 500 руб.</p>
+                          <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                          <p class="card-product__text">
+                            Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной
+                            "рыбой" для текстов на латинице с начала XVI века.
+                          </p>
+                        </div>
+                        <div class="card-product__buttons">
+                          <a class="button button-primary" href="page-house.html">
+                            <span>Подробнее о доме</span>
+                          </a>
+                          <button class="button button-secondary">
+                            <i class="icon--heart-outline"></i>
+                          </button>
+                        </div>
+                        <p class="card-product__marker">В аренде</p>
+                      </article>
+                    </div>
+
+                    <div class="slider__item">
+                      <article class="card-product">
+                        <div class="card-product__thumbnail">
+                          <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                        </div>
+                        <div class="card-product__content">
+                          <p class="card-product__price">1 450 500 руб.</p>
+                          <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                          <p class="card-product__text">
+                            Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной
+                            "рыбой" для текстов на латинице с начала XVI века.
+                          </p>
+                        </div>
+                        <div class="card-product__buttons">
+                          <a class="button button-primary" href="page-house.html">
+                            <span>Подробнее о доме</span>
+                          </a>
+                          <button class="button button-secondary">
+                            <i class="icon--heart-outline"></i>
+                          </button>
+                        </div>
+                      </article>
+                    </div>
+
+                    <div class="slider__item">
+                      <article class="card-product">
+                        <div class="card-product__thumbnail">
+                          <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                        </div>
+                        <div class="card-product__content">
+                          <p class="card-product__price">1 450 500 руб.</p>
+                          <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                          <p class="card-product__text">
+                            Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной
+                            "рыбой" для текстов на латинице с начала XVI века.
+                          </p>
+                        </div>
+                        <div class="card-product__buttons">
+                          <a class="button button-primary" href="page-house.html">
+                            <span>Подробнее о доме</span>
+                          </a>
+                          <button class="button button-secondary">
+                            <i class="icon--heart-outline"></i>
+                          </button>
+                        </div>
+                      </article>
+                    </div>
+
+                    <div class="slider__item">
+                      <article class="card-product">
+                        <div class="card-product__thumbnail">
+                          <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                        </div>
+                        <div class="card-product__content">
+                          <p class="card-product__price">1 450 500 руб.</p>
+                          <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                          <p class="card-product__text">
+                            Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной
+                            "рыбой" для текстов на латинице с начала XVI века.
+                          </p>
+                        </div>
+                        <div class="card-product__buttons">
+                          <a class="button button-primary" href="page-house.html">
+                            <span>Подробнее о доме</span>
+                          </a>
+                          <button class="button button-secondary">
+                            <i class="icon--heart-outline"></i>
+                          </button>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+
+                  <div class="slider__navigations">
+                    <button class="slider__button-prev button button-round button-round--outline"><i class="icon--caret-left"></i></button>
+                    <button class="slider__button-next button button-round button-round--outline"><i class="icon--caret-right"></i></button>
+                    <div class="slider__progress"><span></span></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer class="footer">
