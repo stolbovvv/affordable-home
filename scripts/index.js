@@ -129,4 +129,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   initSilders(sliderReview);
+  const gallery = document.querySelectorAll('.gallery');
+  if (gallery.length > 0) {
+    gallery.forEach(item => {
+      const viewer = item.querySelector('.gallery__photo-viewer');
+      const container = item.querySelector('.gallery__container');
+      const buttonPrev = item.querySelector('.gallery__button-prev');
+      const buttonNext = item.querySelector('.gallery__button-next');
+      const thumbnails = container.querySelectorAll('a');
+      const images = [];
+      thumbnails.forEach((item, index) => {
+        const img = document.createElement('img');
+        img.src = item.href;
+        img.style['opacity'] = 0;
+        images.push(img);
+        viewer.append(img);
+        item.addEventListener('click', e => {
+          e.preventDefault();
+          images.forEach(item => item.style['opacity'] = 0);
+          images[index].style['opacity'] = 1;
+        });
+      });
+      const props = {
+        container: container,
+        prevButton: buttonPrev,
+        nextButton: buttonNext,
+        gutter: 20,
+        items: 3,
+        loop: false,
+        nav: false,
+        responsive: {
+          768: {
+            gutter: 30
+          }
+        }
+      };
+      const direction = document.documentElement.clientWidth >= 768 ? 'vertical' : 'horizontal';
+      tns({
+        ...props,
+        axis: direction
+      });
+      images.forEach(item => item.style['opacity'] = 0);
+      images[0].style['opacity'] = 1;
+    });
+  }
 });
