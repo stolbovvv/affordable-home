@@ -3,12 +3,52 @@
 /* global tns */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const pageHeader = document.querySelector('body > .wrapper > header');
+  const pageWrapper = document.querySelector('body > .wrapper');
   const menuPrimary = document.querySelector('.menu-primary');
+  const buttonScrollTop = document.querySelector('button[data-scroll-to="top"]');
+  const buttonFilterHeroBody = document.querySelector('.banner-hero__filter-body');
+  const buttonFilterHeroOpen = document.querySelector('.banner-hero__filter-open');
+  const buttonFilterHeroClose = document.querySelector('.banner-hero__filter-close');
   const filterHero = document.querySelector('.filter-hero');
   const sliderBase = document.querySelectorAll('.slider[data-slider="base"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
 
-  // Menu
+  // Header
+  let lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  pageWrapper.style.padding = "".concat(pageHeader.offsetHeight, "px 0 0 0");
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollPosition > lastScrollPosition && scrollPosition > pageHeader.offsetHeight) {
+      pageHeader.classList.add('header--hide');
+      pageHeader.classList.remove('header--show');
+    }
+    if (scrollPosition < lastScrollPosition && scrollPosition > pageHeader.offsetHeight) {
+      pageHeader.classList.add('header--show');
+      pageHeader.classList.remove('header--hide');
+    }
+    lastScrollPosition = scrollPosition;
+  });
+
+  // Scroll top
+  if (buttonScrollTop) buttonScrollTop.addEventListener('click', () => window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  }));
+
+  // Open hero filter
+  if (buttonFilterHeroOpen) {
+    buttonFilterHeroOpen.addEventListener('click', () => buttonFilterHeroBody.classList.add('banner-hero__filter-body--active'));
+  }
+
+  // close hero filter
+  if (buttonFilterHeroClose) {
+    buttonFilterHeroClose.addEventListener('click', () => {
+      buttonFilterHeroBody.classList.remove('banner-hero__filter-body--active');
+    });
+  }
+
+  // Toggle menu primary
   if (menuPrimary) {
     const buttonOpen = document.querySelector("[data-open-menu=".concat(menuPrimary.id, "]"));
     const buttonClose = menuPrimary.querySelector(".menu-primary__button-close");
@@ -24,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Warning: menu "primary" not found on the page...');
   }
 
-  // filterHero
+  // filter hero
   if (filterHero) {
     const buttons = filterHero.querySelectorAll('.filter-hero__button');
     const dropdowns = filterHero.querySelectorAll('.filter-hero__dropdaown');
