@@ -112,84 +112,95 @@
               <h2 class="banner-hero__subtitle">Поиск по фильтрам:</h2>
 
               <div class="banner-hero__filter">
-                <form class="filter-hero" action="#">
-                  <div class="filter-hero__item">
-                    <button class="filter-hero__button" type="button">Цена</button>
-                    <div class="filter-hero__dropdaown">
-                      <div class="filter-hero__input-num">
-                        <input type="number" name="price" id="filter-price" placeholder="До" value="" />
+                <button class="banner-hero__filter-open button button-round button-round--white">
+                  <i class="icon--filter-outline"></i>
+                </button>
+
+                <div class="banner-hero__filter-body">
+                  <button class="banner-hero__filter-close">
+                    <i class="icon--caret-left"></i>
+                    <span class="link">Вернутся</span>
+                  </button>
+
+                  <form class="filter-hero" action="#">
+                    <div class="filter-hero__item">
+                      <button class="filter-hero__button" type="button">Цена</button>
+                      <div class="filter-hero__dropdaown">
+                        <div class="filter-hero__input-num">
+                          <input type="number" name="price" id="filter-price" placeholder="До" value="" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="filter-hero__item">
-                    <button class="filter-hero__button" type="button">Площадь</button>
-                    <div class="filter-hero__dropdaown">
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="area-1" id="filter-area-1" />
-                        <label for="filter-area-1">до 100 м2</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="area-2" id="filter-area-2" />
-                        <label for="filter-area-2">100-130 м2</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="area-3" id="filter-area-3" />
-                        <label for="filter-area-3">130-150 м2</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="area-4" id="filter-area-4" />
-                        <label for="filter-area-4">более 150 м2</label>
+                    <div class="filter-hero__item">
+                      <button class="filter-hero__button" type="button">Площадь</button>
+                      <div class="filter-hero__dropdaown">
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="area-1" id="filter-area-1" />
+                          <label for="filter-area-1">до 100 м2</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="area-2" id="filter-area-2" />
+                          <label for="filter-area-2">100-130 м2</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="area-3" id="filter-area-3" />
+                          <label for="filter-area-3">130-150 м2</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="area-4" id="filter-area-4" />
+                          <label for="filter-area-4">более 150 м2</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="filter-hero__item">
-                    <button class="filter-hero__button" type="button">Кол-во спален</button>
-                    <div class="filter-hero__dropdaown">
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="bedrooms-1" id="filter-bedrooms-1" />
-                        <label for="filter-bedrooms-1">1</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="bedrooms-2" id="filter-bedrooms-2" />
-                        <label for="filter-bedrooms-2">2</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="bedrooms-3" id="filter-bedrooms-3" />
-                        <label for="filter-bedrooms-3">3</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="bedrooms-4" id="filter-bedrooms-4" />
-                        <label for="filter-bedrooms-4">4</label>
+                    <div class="filter-hero__item">
+                      <button class="filter-hero__button" type="button">Кол-во спален</button>
+                      <div class="filter-hero__dropdaown">
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="bedrooms-1" id="filter-bedrooms-1" />
+                          <label for="filter-bedrooms-1">1</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="bedrooms-2" id="filter-bedrooms-2" />
+                          <label for="filter-bedrooms-2">2</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="bedrooms-3" id="filter-bedrooms-3" />
+                          <label for="filter-bedrooms-3">3</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="bedrooms-4" id="filter-bedrooms-4" />
+                          <label for="filter-bedrooms-4">4</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="filter-hero__item">
-                    <button class="filter-hero__button" type="button">Район Москвоской обл.</button>
-                    <div class="filter-hero__dropdaown">
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="district-1" id="filter-district-1" />
-                        <label for="filter-district-1">Район Москвоской обл.</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="district-2" id="filter-district-2" />
-                        <label for="filter-district-2">Район Питерской обл.</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="district-3" id="filter-district-3" />
-                        <label for="filter-district-3">Район Пермской обл.</label>
-                      </div>
-                      <div class="filter-hero__checkbox">
-                        <input type="checkbox" name="district-4" id="filter-district-4" />
-                        <label for="filter-district-4">Район Курганской обл.</label>
+                    <div class="filter-hero__item">
+                      <button class="filter-hero__button" type="button">Район Москвоской обл.</button>
+                      <div class="filter-hero__dropdaown">
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="district-1" id="filter-district-1" />
+                          <label for="filter-district-1">Район Москвоской обл.</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="district-2" id="filter-district-2" />
+                          <label for="filter-district-2">Район Питерской обл.</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="district-3" id="filter-district-3" />
+                          <label for="filter-district-3">Район Пермской обл.</label>
+                        </div>
+                        <div class="filter-hero__checkbox">
+                          <input type="checkbox" name="district-4" id="filter-district-4" />
+                          <label for="filter-district-4">Район Курганской обл.</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <button class="filter-hero__search" type="submit"><span>Найти</span><i class="icon--search"></i></button>
-                </form>
+                    <button class="filter-hero__search" type="submit"><span>Найти</span><i class="icon--search"></i></button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -207,10 +218,10 @@
                   Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
                   текстов на латинице с начала XVI века.
                 </p>
-                <button class="banner-map__button button button-primary">
+                <a class="banner-map__button button button-primary" href="page-map.html">
                   <span>Поиск по карте</span>
                   <i class="icon--map-pin-fill"></i>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -515,8 +526,8 @@
                 Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной.
               </p>
               <div class="carousel__more">
-                <a class="link" href="#">Перейти в каталог</a>
-                <i class="icon-font-arrow-right"></i>
+                <a class="link" href="page-blog.html">Все статьи</a>
+                <i class="icon--caret-right"></i>
               </div>
             </div>
 
@@ -653,7 +664,7 @@
             </div>
             <div class="footer__controls">
               <button class="button button-primary" data-open-modal="modal-send"><span>Оставить заявку</span></button>
-              <button class="button button-round button-round--white"><i class="icon--caret-up"></i></button>
+              <button class="button button-round button-round--white" data-scroll-to="top"><i class="icon--caret-up"></i></button>
             </div>
           </div>
           <div class="footer__row">

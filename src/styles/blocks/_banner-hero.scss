@@ -60,12 +60,66 @@
   }
 
   &__filter {
-    display: none;
     align-self: stretch;
+  }
+
+  &__filter-open {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 
     @include for-min-size("md") {
+      display: none;
+    }
+  }
+
+  &__filter-close {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    margin: 0 0 8px 0;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+
+    @include for-min-size("md") {
+      display: none;
+    }
+  }
+
+  &__filter-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $clr-white;
+    transform: translateX(-100%);
+    transition: all 0.25s ease 0s;
+    padding: 40px 15px 40px 15px;
+    z-index: 10;
+
+    @include for-max-size("md") {
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    @include for-min-size("md") {
+      position: static;
+      background: transparent;
+      width: 100%;
+      height: auto;
       margin: 18px 0 0 0;
-      display: block;
+      padding: 0 0 0 0;
+      transform: translateX(0%);
+    }
+
+    &--active {
+      transform: translateX(0%);
     }
   }
 }

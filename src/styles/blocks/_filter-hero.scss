@@ -4,17 +4,26 @@
 .filter-hero {
   position: relative;
   display: flex;
-  align-items: center;
-  margin: 0 0 -30px 0;
-  z-index: 1;
+  flex-direction: column;
 
-  > * + * {
-    border-left: 1px solid $clr-gray;
+  @include for-min-size("md") {
+    flex-direction: row;
+    margin: 0 0 -30px 0;
+    border-bottom: none;
+
+    > * + * {
+      border-left: 1px solid $clr-gray;
+    }
   }
 
   &__item {
     align-self: stretch;
     position: relative;
+    border-bottom: 1px solid $clr-gray;
+
+    @include for-min-size("md") {
+      border-bottom: none;
+    }
 
     &:nth-child(1) > button {
       border-radius: 4px 0 0 4px;
@@ -32,14 +41,20 @@
   }
 
   &__button {
+    position: relative;
     height: 60px;
     width: 100%;
     background: $clr-white;
     border: none;
-    padding: 10px 32px 10px 16px;
+    padding: 10px 32px 10px 0px;
     text-align: left;
-    cursor: pointer;
     color: rgba($color: #000000, $alpha: 0.5);
+    cursor: pointer;
+
+    @include for-min-size("md") {
+      border: none;
+      padding: 10px 32px 10px 16px;
+    }
 
     &::before {
       content: "\e900";
@@ -48,7 +63,7 @@
       right: 0;
       font-size: 16px;
       transform: translate(-100%, -50%);
-      transition: all 0.5s ease 0s;
+      transition: all 0.25s ease 0s;
 
       font-family: "user-icon-font" !important;
       speak: never;
@@ -65,29 +80,40 @@
       display: flex;
     }
 
-    &--active::before {
-      transform: translate(-100%, -50%) rotate(-180deg);
+    &--active {
+      &::before {
+        transform: translate(-100%, -50%) rotate(-180deg);
+      }
     }
   }
 
   &__dropdaown {
-    position: absolute;
-    top: 100%;
-    left: 0;
     width: 100%;
-    opacity: 1;
+    max-height: 0;
     border-radius: 4px;
     background: $clr-white;
     transform: translateY(-5px);
     visibility: hidden;
+    overflow: hidden;
     opacity: 0;
     transition: all 0.25s ease 0s;
-    overflow: hidden;
+    z-index: 1;
+
+    @include for-min-size("md") {
+      position: absolute;
+      overflow: auto;
+      top: 100%;
+      left: 0;
+    }
 
     &--active {
-      visibility: visible;
       opacity: 1;
-      transform: translateY(2px);
+      visibility: visible;
+      max-height: 300px;
+
+      @include for-min-size("md") {
+        transform: translateY(2px);
+      }
     }
   }
 
@@ -110,22 +136,31 @@
       position: relative;
       width: 100%;
       border: none;
-      padding: 14px 32px 13px 16px;
+      padding: 14px 32px 13px 0px;
+      outline: none;
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
+      }
+
+      @include for-min-size("md") {
+        padding: 14px 32px 13px 16px;
       }
     }
   }
 
   &__checkbox {
     position: relative;
-    margin: 0 20px 18px 20px;
+    margin: 0 0 18px 0;
     padding: 0 0 0 32px;
 
     &:nth-child(1) {
       margin-top: 18px;
+    }
+
+    @include for-min-size("md") {
+      margin: 0 20px 18px 20px;
     }
 
     > input[type="checkbox"] {
@@ -174,35 +209,49 @@
   }
 
   &__search {
-    height: 60px;
+    align-self: flex-start;
     flex: 0 0 auto;
     display: flex;
     align-items: center;
     border: none;
     background: $clr-balck;
+    margin: 24px 0 0 0;
     padding: 10px 20px 10px 20px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     cursor: pointer;
 
+    @include for-min-size("md") {
+      border-radius: 0 4px 4px 0;
+      margin: 0;
+      height: 60px;
+    }
+
     span {
-      display: none;
+      margin: 2px 0 0 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $clr-white;
+
+      @include for-min-size("md") {
+        display: none;
+      }
 
       @include for-min-size("lg") {
         display: block;
-        margin: 2px 0 0 0;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 14px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: $clr-white;
       }
     }
 
     > i {
-      color: $clr-white;
+      margin: 0 0 0 12px;
       font-size: 24px;
-      margin: 0 0 0 0;
+      color: $clr-white;
+
+      @include for-min-size("md") {
+        margin: 0 0 0 0;
+      }
 
       @include for-min-size("lg") {
         margin: 0 0 0 12px;
