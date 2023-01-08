@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initMenu(menuClass) {
     const body = document.body;
     const menu = document.querySelector(".".concat(menuClass));
+    if (!menu) return;
     const open = document.querySelector("[data-open-menu=".concat(menu.id, "]"));
     const close = document.querySelector("[data-close-menu=".concat(menu.id, "]"));
     open.addEventListener('click', () => {
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // filter init
   function initFilter(filterClass) {
     const filter = document.querySelector(".".concat(filterClass));
+    if (!filter) return;
     const buttons = filter.querySelectorAll(".".concat(filterClass, "__button"));
     const dropdowns = filter.querySelectorAll(".".concat(filterClass, "__dropdown"));
     buttons.forEach(button => {
