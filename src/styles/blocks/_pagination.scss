@@ -1,0 +1,58 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 30px 0;
+
+  @include for-min-size("md") {
+    padding: 0 0 60px 0;
+  }
+
+  @include for-min-size("lg") {
+    padding: 0 0 80px 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 10px 0 10px;
+
+    @include for-min-size("md") {
+      margin: 0 50px 0 50px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin: 0 10px 0 10px;
+    padding: 2px 0 0 0;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    background: transparent;
+    border: 1px solid $clr-primary;
+    cursor: pointer;
+
+    &_current {
+      background-color: $clr-primary;
+      background-image: $liner-primary;
+      color: $clr-white;
+    }
+
+    @include for-max-size("md") {
+      &:nth-child(1n + 4) {
+        display: none;
+      }
+    }
+  }
+}

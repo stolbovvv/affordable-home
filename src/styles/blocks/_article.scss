@@ -1,0 +1,69 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.article {
+  padding: 20px 0 0 0;
+
+  @include for-min-size("md") {
+    padding: 32px 0 0 0;
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 18px 0 0 0;
+    padding: 0 0 45% 0;
+    border-radius: 4px;
+    overflow: hidden;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__body {
+    margin: 0 auto 0 auto;
+    max-width: 870px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 18px 0 0 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.1875;
+      color: $clr-primary;
+
+      @include for-min-size("md") {
+        margin: 24px 0 0 0;
+        font-size: 18px;
+      }
+
+      @include for-min-size("lg") {
+        margin: 32px 0 0 0;
+        margin: 32px 0 0 0;
+      }
+    }
+
+    p {
+      margin: 18px 0 0 0;
+    }
+
+    .button {
+      margin: 18px 0 0 0;
+
+      @include for-min-size("md") {
+        margin: 24px 0 0 0;
+      }
+    }
+  }
+}
