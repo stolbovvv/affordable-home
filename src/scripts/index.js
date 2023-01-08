@@ -74,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (button !== item) item.classList.remove('filter__button--active');
         });
 
-        dropdowns.forEach((item) => item.classList.remove('filter__dropdown--active'));
+        dropdowns.forEach((item) => {
+          if (dropdown !== item) item.classList.remove('filter__dropdown--active');
+        });
 
         if (button.classList.contains(`${filterClass}__button--active`)) {
           dropdown.classList.remove('filter__dropdown--active');
