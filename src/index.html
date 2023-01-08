@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="styles/index.min.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header">
+    <div class="wrapper" id="page-wrapper">
+      <header class="header" id="page-header">
         <section class="header__head">
           <div class="container">
             <div class="header__row">
@@ -63,7 +63,7 @@
         <section class="header__menu">
           <div class="container">
             <nav class="menu-primary" id="menu-primary">
-              <button class="menu-primary__button-close"><i class="icon--colse"></i></button>
+              <button class="menu-primary__button-close" data-close-menu="menu-primary"><i class="icon--colse"></i></button>
               <ul class="menu-primary__list">
                 <li><a class="menu-primary__link" href="page-catalog.html">Каталог</a></li>
                 <li><a class="menu-primary__link" href="page-rent.html">Аренда с выкупом</a></li>
@@ -112,8 +112,8 @@
               <h2 class="banner-hero__subtitle">Поиск по фильтрам:</h2>
 
               <div class="banner-hero__filter">
-                <form class="filter" action="#">
-                  <button class="filter__button-close" data-filter="close">
+                <form class="filter" action="#" id="menu-filter">
+                  <button class="filter__button-close" type="button" data-close-menu="menu-filter">
                     <i class="icon--caret-left"></i>
                     <span class="link">Вернутся</span>
                   </button>
@@ -121,7 +121,7 @@
                   <div class="filter__row">
                     <div class="filter__item">
                       <button class="filter__button" type="button">Цена</button>
-                      <div class="filter__dropdaown">
+                      <div class="filter__dropdown">
                         <div class="filter__input-num">
                           <input type="number" name="price" id="filter-price" placeholder="До" value="" />
                         </div>
@@ -130,7 +130,7 @@
 
                     <div class="filter__item">
                       <button class="filter__button" type="button">Площадь</button>
-                      <div class="filter__dropdaown">
+                      <div class="filter__dropdown">
                         <div class="filter__checkbox">
                           <input type="checkbox" name="area-1" id="filter-area-1" />
                           <label for="filter-area-1">до 100 м2</label>
@@ -152,7 +152,7 @@
 
                     <div class="filter__item">
                       <button class="filter__button" type="button">Кол-во спален</button>
-                      <div class="filter__dropdaown">
+                      <div class="filter__dropdown">
                         <div class="filter__checkbox">
                           <input type="checkbox" name="bedrooms-1" id="filter-bedrooms-1" />
                           <label for="filter-bedrooms-1">1</label>
@@ -174,7 +174,7 @@
 
                     <div class="filter__item">
                       <button class="filter__button" type="button">Район Москвоской обл.</button>
-                      <div class="filter__dropdaown">
+                      <div class="filter__dropdown">
                         <div class="filter__checkbox">
                           <input type="checkbox" name="district-1" id="filter-district-1" />
                           <label for="filter-district-1">Район Москвоской обл.</label>
@@ -198,7 +198,7 @@
                   </div>
                 </form>
 
-                <button class="banner-hero__filter-open button button-round button-round--white" data-filter="open">
+                <button class="banner-hero__filter-open button button-round button-round--white" data-open-menu="menu-filter">
                   <i class="icon--filter-fill"></i>
                 </button>
               </div>

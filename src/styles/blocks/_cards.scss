@@ -151,3 +151,46 @@
     color: $clr-white;
   }
 }
+
+.card-review {
+  padding: 16px 16px 16px 16px;
+  border: 1px solid $clr-primary;
+  border-radius: 4px;
+
+  @include for-min-size("md") {
+    padding: 24px 24px 24px 24px;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__name {
+    margin: 0 0 0 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: $clr-primary;
+
+    @include for-min-size("md") {
+      margin: 0 0 0 16px;
+    }
+  }
+
+  &__text {
+    margin: 16px 0 0 0;
+
+    @include for-min-size("md") {
+      margin: -4px 0 0 56px;
+    }
+  }
+}
