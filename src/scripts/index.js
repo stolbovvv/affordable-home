@@ -70,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const dropdown = button.nextElementSibling;
 
       button.addEventListener('click', () => {
-        buttons.forEach((item) => item.classList.remove('filter__button--active'));
+        buttons.forEach((item) => {
+          if (button !== item) item.classList.remove('filter__button--active');
+        });
+
         dropdowns.forEach((item) => item.classList.remove('filter__dropdown--active'));
 
         if (button.classList.contains(`${filterClass}__button--active`)) {
