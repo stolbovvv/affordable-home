@@ -5,10 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageWrapper = document.querySelector('body > .wrapper');
   const menuPrimary = document.querySelector('.menu-primary');
   const buttonScrollTop = document.querySelector('button[data-scroll-to="top"]');
-  const buttonFilterHeroBody = document.querySelector('.banner-hero__filter-body');
-  const buttonFilterHeroOpen = document.querySelector('.banner-hero__filter-open');
-  const buttonFilterHeroClose = document.querySelector('.banner-hero__filter-close');
-  const filterHero = document.querySelector('.filter-hero');
+  const filter = document.querySelector('.filter');
+  const filterOpen = document.querySelector('[data-filter="open"]');
+  const filterClose = document.querySelector('[data-filter="close"]');
   const sliderBase = document.querySelectorAll('.slider[data-slider="base"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
 
@@ -36,19 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll top
   if (buttonScrollTop) buttonScrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // Open hero filter
-  if (buttonFilterHeroOpen) {
-    buttonFilterHeroOpen.addEventListener('click', () =>
-      buttonFilterHeroBody.classList.add('banner-hero__filter-body--active'),
-    );
-  }
-
-  // close hero filter
-  if (buttonFilterHeroClose) {
-    buttonFilterHeroClose.addEventListener('click', () => {
-      buttonFilterHeroBody.classList.remove('banner-hero__filter-body--active');
-    });
-  }
+  // Open & toggle hero filter
+  if (filterOpen) filterOpen.addEventListener('click', () => filter.classList.toggle('filter--show'));
+  if (filterClose) filterClose.addEventListener('click', () => filter.classList.remove('filter--show'));
 
   // Toggle menu primary
   if (menuPrimary) {
@@ -68,32 +57,32 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Warning: menu "primary" not found on the page...');
   }
 
-  // filter hero
-  if (filterHero) {
-    const buttons = filterHero.querySelectorAll('.filter-hero__button');
-    const dropdowns = filterHero.querySelectorAll('.filter-hero__dropdaown');
+  // filter
+  if (filter) {
+    const buttons = filter.querySelectorAll('.filter__button');
+    const dropdowns = filter.querySelectorAll('.filter__dropdaown');
 
-    filterHero.addEventListener('click', (e) => {
-      if (e.target && e.target.classList.contains('filter-hero__button')) {
+    filter.addEventListener('click', (e) => {
+      if (e.target && e.target.classList.contains('filter__button')) {
         dropdowns.forEach((dropdown) => {
-          if (dropdown === e.target.nextElementSibling && !e.target.classList.contains('filter-hero__button--active')) {
-            dropdown.classList.add('filter-hero__dropdaown--active');
+          if (dropdown === e.target.nextElementSibling && !e.target.classList.contains('filter__button--active')) {
+            dropdown.classList.add('filter__dropdaown--active');
           } else {
-            dropdown.classList.remove('filter-hero__dropdaown--active');
+            dropdown.classList.remove('filter__dropdaown--active');
           }
         });
 
         buttons.forEach((button) => {
-          if (button === e.target && !e.target.classList.contains('filter-hero__button--active')) {
-            button.classList.add('filter-hero__button--active');
+          if (button === e.target && !e.target.classList.contains('filter__button--active')) {
+            button.classList.add('filter__button--active');
           } else {
-            button.classList.remove('filter-hero__button--active');
+            button.classList.remove('filter__button--active');
           }
         });
       }
     });
   } else {
-    console.warn('Warning: filter "hero" not found on the page...');
+    console.warn('Warning: filter not found on the page...');
   }
 
   // Sliders

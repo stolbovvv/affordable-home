@@ -15,7 +15,7 @@
 @use "./blocks/menu";
 @use "./blocks/slider";
 @use "./blocks/cards";
-@use "./blocks/filter-hero";
+@use "./blocks/filter";
 @use "./blocks/banner-hero";
 @use "./blocks/banner-map";
 @use "./blocks/carousel";
@@ -26,6 +26,7 @@
 @use "./layouts/header";
 @use "./layouts/footer";
 @use "./layouts/page-head";
+@use "./layouts/grid";
 
 // 4. Page-specific styles
 @use "./pages/home";

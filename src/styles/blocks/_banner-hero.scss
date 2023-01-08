@@ -10,6 +10,10 @@
   background-size: cover;
 
   @include for-min-size("md") {
+    padding: 130px 0 130px 0;
+  }
+
+  @include for-min-size("lg") {
     padding: 130px 0 0 0;
   }
 
@@ -49,7 +53,7 @@
   &__subtitle {
     display: none;
 
-    @include for-min-size("md") {
+    @include for-min-size("lg") {
       display: block;
       margin: 64px 0 0 0;
       font-weight: 600;
@@ -61,6 +65,22 @@
 
   &__filter {
     align-self: stretch;
+
+    @include for-min-size("lg") {
+      margin: 0 0 -26px 0;
+    }
+
+    > .filter {
+      padding: 32px 15px 0 15px;
+
+      @include for-min-size("lg") {
+        margin: 24px 0 0 0;
+        padding: 0 0 0 0;
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+      }
+    }
   }
 
   &__filter-open {
@@ -70,56 +90,8 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
     z-index: 10;
 
-    @include for-min-size("md") {
+    @include for-min-size("lg") {
       display: none;
-    }
-  }
-
-  &__filter-close {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    margin: 0 0 8px 0;
-
-    > * + * {
-      margin: 0 0 0 8px;
-    }
-
-    @include for-min-size("md") {
-      display: none;
-    }
-  }
-
-  &__filter-body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: $clr-white;
-    transform: translateX(-100%);
-    transition: all 0.25s ease 0s;
-    padding: 40px 15px 40px 15px;
-    z-index: 10;
-
-    @include for-max-size("md") {
-      overflow: hidden;
-      overflow-y: scroll;
-    }
-
-    @include for-min-size("md") {
-      position: static;
-      background: transparent;
-      width: 100%;
-      height: auto;
-      margin: 18px 0 0 0;
-      padding: 0 0 0 0;
-      transform: translateX(0%);
-    }
-
-    &--active {
-      transform: translateX(0%);
     }
   }
 }

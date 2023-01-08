@@ -101,6 +101,350 @@
             </ol>
             <div class="page-head__row">
               <h1 class="page-head__title">Каталог</h1>
+
+              <div class="page-head__controls">
+                <button class="page-head__controls-button" data-filter="open">
+                  <span class="link link_clr-accent" href="#">Фильтры</span>
+                  <i class="icon--filter-outline"></i>
+                </button>
+                <a class="page-head__controls-link button button-primary" href="page-map.html">
+                  <span>Поиск по карте</span>
+                  <i class="icon--map-pin-fill"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <form class="filter" action="#">
+          <div class="container">
+            <button class="filter__button-close" data-filter="close">
+              <i class="icon--caret-left"></i>
+              <span class="link">Вернутся</span>
+            </button>
+
+            <div class="filter__grid">
+              <div class="filter__item">
+                <button class="filter__button" type="button">Цена</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__input-num">
+                    <input type="number" name="price" id="filter-price" placeholder="До" value="" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">Площадь</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="area-1" id="filter-area-1" />
+                    <label for="filter-area-1">до 100 м2</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="area-2" id="filter-area-2" />
+                    <label for="filter-area-2">100-130 м2</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="area-3" id="filter-area-3" />
+                    <label for="filter-area-3">130-150 м2</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="area-4" id="filter-area-4" />
+                    <label for="filter-area-4">более 150 м2</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">Кол-во спален</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="bedrooms-1" id="filter-bedrooms-1" />
+                    <label for="filter-bedrooms-1">1</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="bedrooms-2" id="filter-bedrooms-2" />
+                    <label for="filter-bedrooms-2">2</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="bedrooms-3" id="filter-bedrooms-3" />
+                    <label for="filter-bedrooms-3">3</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="bedrooms-4" id="filter-bedrooms-4" />
+                    <label for="filter-bedrooms-4">4</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">Район Москвоской обл.</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="district-1" id="filter-district-1" />
+                    <label for="filter-district-1">Район Москвоской обл.</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="district-2" id="filter-district-2" />
+                    <label for="filter-district-2">Район Питерской обл.</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="district-3" id="filter-district-3" />
+                    <label for="filter-district-3">Район Пермской обл.</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="district-4" id="filter-district-4" />
+                    <label for="filter-district-4">Район Курганской обл.</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">В шаговой доступности</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="nearby-1" id="filter-nearby-1" />
+                    <label for="filter-nearby-1">Магазин</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="nearby-2" id="filter-nearby-2" />
+                    <label for="filter-nearby-2">ЖД станция</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="nearby-3" id="filter-nearby-3" />
+                    <label for="filter-nearby-3">Автобусная станция</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="nearby-4" id="filter-nearby-4" />
+                    <label for="filter-nearby-4">Школа</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="nearby-5" id="filter-nearby-5" />
+                    <label for="filter-nearby-5">Детский сад</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">Материал стен</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="material-1" id="filter-material-1" />
+                    <label for="filter-material-1">Газобетонный блок</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="material-2" id="filter-material-2" />
+                    <label for="filter-material-2">Брус</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="material-3" id="filter-material-3" />
+                    <label for="filter-material-3">Каркас</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter__item">
+                <button class="filter__button" type="button">Отопление</button>
+                <div class="filter__dropdaown">
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="heating-1" id="filter-heating-1" />
+                    <label for="filter-heating-1">Электрическое</label>
+                  </div>
+                  <div class="filter__checkbox">
+                    <input type="checkbox" name="heating-2" id="filter-heating-2" />
+                    <label for="filter-heating-2">Газовое</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="filter__search" type="submit"><span>Найти</span><i class="icon--search"></i></button>
+          </div>
+        </form>
+
+        <section class="grid">
+          <div class="container">
+            <div class="grid__inner">
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+                <p class="card-product__marker">В аренде</p>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+                <p class="card-product__marker">В аренде</p>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+                <p class="card-product__marker">В аренде</p>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+                <p class="card-product__marker">В аренде</p>
+              </article>
+              <article class="card-product">
+                <div class="card-product__thumbnail">
+                  <img class="card-product__thumbnail-img" src="images/content/house-small-1.jpg" alt="" />
+                </div>
+                <div class="card-product__content">
+                  <p class="card-product__price">1 450 500 руб.</p>
+                  <p class="card-product__name">Жилой дом, 120 м2 на участке 100 сот</p>
+                  <p class="card-product__text">
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.
+                  </p>
+                </div>
+                <div class="card-product__buttons">
+                  <a class="button button-primary" href="page-house.html">
+                    <span>Подробнее о доме</span>
+                  </a>
+                  <button class="button button-secondary">
+                    <i class="icon--heart-outline"></i>
+                    <span>в избранное</span>
+                  </button>
+                </div>
+              </article>
             </div>
           </div>
         </section>

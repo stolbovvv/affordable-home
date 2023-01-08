@@ -1,0 +1,295 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px 0 0 0;
+  background: $clr-white;
+  overflow: hidden;
+  overflow-y: auto;
+  transform: translate(-100%);
+  transition: all 0.5s ease 0s;
+  z-index: 100;
+
+  &--show {
+    transform: translate(0%);
+  }
+
+  @include for-min-size("lg") {
+    position: relative;
+    height: auto;
+    max-height: 0px;
+    width: auto;
+    border-radius: 4px;
+    transform: translate(0%);
+    overflow: hidden;
+    opacity: 0;
+    z-index: 1;
+
+    &--show {
+      opacity: 1;
+      overflow: visible;
+      max-height: 600px;
+    }
+  }
+
+  &__button-close {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    margin: 0 0 16px 0;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+
+    @include for-min-size("lg") {
+      display: none;
+    }
+  }
+
+  &__row {
+    @include for-min-size("md") {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    @include for-min-size("lg") {
+      padding: 0 0 0 0;
+      flex-wrap: nowrap;
+      > * + * {
+        border-left: 1px solid $clr-gray;
+      }
+    }
+
+    & > .filter__item {
+      @include for-min-size("md") {
+        flex: 0 0 calc(50% - 16px);
+      }
+
+      @include for-min-size("lg") {
+        padding: 0 18px 0 18px;
+
+        > .filter__button {
+          border-bottom: none;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          flex: 0 0 20%;
+        }
+
+        &:nth-child(4) {
+          flex: 0 0 30%;
+        }
+      }
+    }
+
+    > button.filter__search {
+      @include for-min-size("lg") {
+        margin: 0;
+        align-self: stretch;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 32px;
+
+    @include for-min-size("md") {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include for-min-size("lg") {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__button {
+    position: relative;
+    width: 100%;
+    height: 52px;
+    border: none;
+    background: none;
+    text-align: left;
+    border-bottom: 1px solid rgba($color: #323232, $alpha: 0.5);
+    cursor: pointer;
+
+    &::before {
+      content: "\e900";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: 16px;
+      transform: translate(-10%, -50%);
+      transition: all 0.25s ease 0s;
+
+      font-family: "user-icon-font" !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      display: flex;
+    }
+
+    &--active::before {
+      transform: translate(-10%, -50%) rotate(-180deg);
+    }
+  }
+
+  &__dropdaown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 0px;
+    width: 100%;
+    background: $clr-white;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: 0.25s ease 0s;
+    padding: 0 18px 0 18px;
+    z-index: 1;
+
+    &--active {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+  }
+
+  &__input-num {
+    position: relative;
+
+    &::before {
+      content: "₽";
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      z-index: 1;
+      font-size: 16px;
+      line-height: 1.2;
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+
+    > input[type="number"] {
+      width: 100%;
+      height: 56px;
+      outline: none;
+      border: none;
+      padding: 0 18px 0 0;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    padding: 0 0 18px 0;
+
+    &:nth-child(1) {
+      padding-top: 18px;
+    }
+
+    > input[type="checkbox"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+
+      &:checked + label:after {
+        opacity: 1;
+      }
+    }
+
+    > label {
+      position: relative;
+      font-size: 16px;
+      line-height: 1.2;
+      padding: 0 0 0 26px;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        border: 1px solid $clr-primary;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        background: $clr-primary;
+        transform: translateY(-50%);
+        transition: all 0.25s ease 0s;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__search {
+    margin: 24px 0 0 auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: $clr-balck;
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+    color: $clr-white;
+    cursor: pointer;
+
+    > span {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    > i {
+      margin: 0 0 0 12px;
+      font-size: 24px;
+      color: $clr-white;
+    }
+  }
+}
