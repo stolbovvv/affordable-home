@@ -21,19 +21,20 @@
 
   @include for-min-size("lg") {
     display: flex;
+    justify-content: space-between;
   }
 
   &__content {
     min-width: 0;
     @include for-min-size("lg") {
-      flex: 0 0 calc(75% - 8px);
+      flex: 0 0 calc(75% - 16px);
     }
   }
 
   &__sidebar {
     min-width: 0;
     @include for-min-size("lg") {
-      flex: 0 0 calc(25% - 8px);
+      flex: 0 0 calc(25% - 16px);
     }
   }
 }

@@ -17,12 +17,14 @@
 @use "./blocks/slider";
 @use "./blocks/cards";
 @use "./blocks/filter";
+@use "./blocks/gallery";
 @use "./blocks/banner-hero";
 @use "./blocks/banner-map";
 @use "./blocks/carousel";
 @use "./blocks/stages";
 @use "./blocks/about";
 @use "./blocks/article";
+@use "./blocks/house";
 
 // 3. Layout-related sections
 @use "./layouts/header";

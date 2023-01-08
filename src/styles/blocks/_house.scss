@@ -1,0 +1,226 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.house-info {
+  margin: 32px 0 0 0;
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: $clr-primary;
+  }
+
+  &__descr {
+    margin: 16px 0 0 0;
+  }
+
+  &__link {
+    margin: 16px 0 0 0;
+    display: flex;
+    align-items: center;
+    color: $clr-primary;
+    text-decoration: none;
+
+    > i {
+      margin: 0 0 0 10px;
+      font-size: 24px;
+    }
+  }
+
+  &__gallery {
+    margin: 16px 0 0 0;
+  }
+
+  &__props {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 32px 0 0 0;
+    padding: 0 16px 16px 16px;
+    border: 1px solid $clr-primary;
+    justify-content: space-between;
+    border-radius: 4px;
+  }
+
+  &__props-item {
+    margin: 16px 0 0 0;
+    flex: 0 0 calc(50% - 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include for-min-size("md") {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__props-value {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: $clr-primary;
+  }
+
+  &__props-label {
+    margin: 6px 0 0 0;
+  }
+
+  &__nearby {
+    margin: 32px 0 0 0;
+  }
+
+  &__nearby-label {
+  }
+
+  &__nearby-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 10px 0 0 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: $clr-primary;
+
+    > li {
+      padding: 0 0 0 16px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 6px;
+        width: 5px;
+        height: 5px;
+        background: $clr-primary;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    > * + * {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__text {
+    margin: 32px 0 0 0;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin: 16px 0 0 0;
+
+    > * + * {
+      margin: 0 0 0 16px;
+    }
+  }
+}
+
+.house-price {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 32px 0 0 0;
+
+  &__value {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $clr-primary;
+  }
+
+  &__descr {
+    margin: 10px 0 0 0;
+  }
+
+  &__calc-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $clr-primary;
+    background-image: $liner-primary;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 24px 0 0 0;
+
+    > img {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $clr-white;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__calc {
+    border-bottom: 1px solid rgba($color: #323232, $alpha: 0.5);
+    padding: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    margin: 12px 0 0 0;
+    cursor: pointer;
+
+    > img {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    > span {
+      flex: 1 1 auto;
+      margin: 0 0 0 10px;
+    }
+    &:hover > img {
+    }
+    &:hover > span {
+      color: $clr-accent;
+    }
+  }
+}
+
+.house-plan {
+  margin: 36px 0 0 0;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0 0 0;
+
+    > * + * {
+      margin: 24px 0 0 0;
+    }
+
+    @include for-min-size("md") {
+      flex-direction: row;
+
+      > * + * {
+        margin: 0 0 0 24px;
+      }
+    }
+    @include for-min-size("lg") {
+      flex-direction: column;
+
+      > * + * {
+        margin: 24px 0 0 0;
+      }
+    }
+  }
+}
