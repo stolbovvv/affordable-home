@@ -2568,6 +2568,91 @@ i::before {
   }
 }
 
+.not-found {
+  padding: 20px 0 15px 0;
+}
+@media only screen and (min-width: 768px) {
+  .not-found {
+    padding: 60px 0 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.not-found__img {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .not-found__img {
+    flex: 0 0 calc(40% - 16px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .not-found__img {
+    flex: 0 0 calc(50% - 16px);
+  }
+}
+.not-found__message > * + * {
+  margin: 16px 0 0 0;
+}
+.not-found__message > h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #008f53;
+}
+.not-found__message > p {
+  max-width: 370px;
+}
+@media only screen and (min-width: 768px) {
+  .not-found__message {
+    flex: 0 0 calc(60% - 16px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .not-found__message {
+    flex: 0 0 calc(50% - 16px);
+  }
+}
+
+.policy {
+  padding: 0 0 15px 0;
+}
+@media only screen and (min-width: 768px) {
+  .policy {
+    padding: 0 0 30px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .policy {
+    padding: 0 0 80px 0;
+  }
+}
+.policy h2 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #008f53;
+  margin: 24px 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .policy h2 {
+    font-size: 24px;
+    margin: 32px 0 0 0;
+  }
+}
+.policy p {
+  font-size: 12px;
+  line-height: 1.2;
+  margin: 16px 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .policy p {
+    font-size: 14px;
+    margin: 24px 0 0 0;
+  }
+}
+
 /* header */
 .header {
   position: fixed;
