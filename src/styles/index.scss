@@ -31,6 +31,8 @@
 @use "./blocks/departments";
 @use "./blocks/advantages";
 @use "./blocks/information";
+@use "./blocks/not-found";
+@use "./blocks/policy";
 
 // 3. Layout-related sections
 @use "./layouts/header";

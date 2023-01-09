@@ -1,0 +1,50 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.not-found {
+  padding: 20px 0 15px 0;
+
+  @include for-min-size("md") {
+    padding: 60px 0 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__img {
+    width: 100%;
+
+    @include for-min-size("md") {
+      flex: 0 0 calc(40% - 16px);
+    }
+
+    @include for-min-size("lg") {
+      flex: 0 0 calc(50% - 16px);
+    }
+  }
+
+  &__message {
+    > * + * {
+      margin: 16px 0 0 0;
+    }
+
+    > h1 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: $clr-primary;
+    }
+
+    > p {
+      max-width: 370px;
+    }
+
+    @include for-min-size("md") {
+      flex: 0 0 calc(60% - 16px);
+    }
+
+    @include for-min-size("lg") {
+      flex: 0 0 calc(50% - 16px);
+    }
+  }
+}
