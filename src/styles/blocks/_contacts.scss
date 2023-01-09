@@ -1,0 +1,138 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.contacts {
+  margin: 16px 0 0 0;
+
+  @include for-min-size("md") {
+    margin: 32px 0 30px 0;
+  }
+
+  @include for-min-size("lg") {
+    display: flex;
+    align-items: flex-start;
+    margin: 32px 0 40px 0;
+  }
+
+  &__map {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @include for-min-size("md") {
+      height: 500px;
+    }
+
+    @include for-min-size("lg") {
+      flex: 0 0 58.333%;
+    }
+  }
+
+  &__body {
+    @include for-min-size("md") {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    @include for-min-size("lg") {
+      margin: 0 0 0 32px;
+      flex: 1 1 auto;
+    }
+  }
+
+  &__item {
+    margin: 16px 0 0 0;
+
+    @include for-min-size("md") {
+      margin: 32px 0 0 0;
+      flex: 0 0 calc(50% - 16px);
+    }
+
+    @include for-min-size("lg") {
+      flex: 0 0 100%;
+      margin: 24px 0 0 0;
+
+      &:nth-child(1) {
+        margin: 0 0 0 0;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #008f53;
+
+    @include for-min-size("md") {
+      font-style: 18px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+
+    > li {
+      display: flex;
+      align-items: center;
+      margin: 12px 0 0 0;
+
+      > * + * {
+        margin: 0 0 0 10px;
+      }
+
+      > i {
+        font-size: 18px;
+        color: inherit;
+      }
+
+      > a,
+      > address {
+        font-weight: 600;
+        font-size: 12px;
+        text-decoration: none;
+        line-height: 14px;
+        letter-spacing: 0.05em;
+        color: inherit;
+
+        &:hover {
+          color: $clr-accent;
+        }
+
+        @include for-min-size("md") {
+          font-size: 14px;
+        }
+      }
+
+      > address:hover {
+        color: $clr-dark;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    list-style-type: none;
+    margin: 12px 0 0 0;
+
+    > * + * {
+      margin: 0 0 0 10px;
+    }
+
+    > li > a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $clr-accent;
+      }
+    }
+
+    > li > a > i {
+      font-size: 24px;
+      color: inherit;
+    }
+  }
+}
