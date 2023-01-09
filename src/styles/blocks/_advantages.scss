@@ -1,0 +1,77 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.advantages {
+  padding: 15px 0 30px 0;
+
+  @include for-min-size("md") {
+    padding: 30px 0 60px;
+  }
+
+  @include for-min-size("md") {
+    padding: 40px 0 80px;
+  }
+
+  &__items {
+    margin: 6px 0 0 0;
+
+    > * {
+      margin: 18px 0 0 0;
+    }
+
+    @include for-min-size("md") {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      > * {
+        margin: 24px 0 0 0;
+        flex: 0 0 calc(50% - 16px);
+      }
+    }
+
+    @include for-min-size("lg") {
+      > * {
+        margin: 24px 0 0 0;
+        flex: 0 0 calc(25% - 24px);
+      }
+    }
+  }
+}
+
+.advantages-item {
+  > * + * {
+    margin: 18px 0 0 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    @include for-min-size("md") {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: $clr-primary;
+
+    @include for-min-size("md") {
+      font-size: 18px;
+    }
+  }
+}

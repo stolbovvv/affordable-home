@@ -1,0 +1,87 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.departments {
+  margin: 30px 0 16px 0;
+
+  @include for-min-size("md") {
+    margin: 60px 0 30px 0;
+  }
+
+  @include for-min-size("md") {
+    margin: 80px 0 40px 0;
+  }
+
+  &__title {
+    color: $clr-primary;
+  }
+
+  &__descr {
+    margin: 16px 0 0 0;
+    max-width: 570px;
+  }
+
+  &__slider {
+    margin: 16px 0 0 0;
+
+    @include for-min-size("md") {
+      margin: 0 0 0 0;
+    }
+  }
+
+  &__items {
+    @include for-min-size("md") {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > * {
+        flex: 0 0 calc(50% - 16px);
+      }
+
+      > * {
+        margin: 0 0 0 0;
+
+        @include for-min-size("md") {
+          margin: 24px 0 0 0;
+        }
+
+        @include for-min-size("lg") {
+          margin: 32px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+.subdivision {
+  &__label {
+    color: rgba($color: $clr-dark, $alpha: 0.5);
+  }
+
+  &__row {
+    margin: 10px 0 0 0;
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $clr-primary;
+  }
+
+  > p {
+    margin: 16px 0 0 0;
+  }
+}
