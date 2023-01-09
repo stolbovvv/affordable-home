@@ -202,8 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // sliders: init
   function initSilders(sliders, props) {
-    console.log(sliders);
-
     if (sliders.length === 0) return;
 
     sliders.forEach((item) => {
