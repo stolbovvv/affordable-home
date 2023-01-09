@@ -1,0 +1,120 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+.building {
+  margin: 16px 0 30px 0;
+
+  @include for-min-size("md") {
+    margin: 24px 0 60px 0;
+  }
+
+  @include for-min-size("lg") {
+    margin: 32px 0 80px 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__photo-viewer {
+    position: relative;
+    border-radius: 4px;
+    background: $clr-gray;
+    min-height: 300px;
+    overflow: hidden;
+    flex: 1 1 50%;
+
+    @include for-min-size("md") {
+      min-height: 490px;
+    }
+    @include for-min-size("lg") {
+      order: 2;
+    }
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__thumbnails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > * + * {
+      margin: 0 0 0 18px;
+    }
+
+    @include for-min-size("md") {
+      > * + * {
+        margin: 0 0 0 35px;
+      }
+    }
+
+    @include for-min-size("lg") {
+      flex-direction: column;
+      order: 1;
+
+      > * + * {
+        margin: 35px 0 0 0;
+      }
+    }
+
+    a > img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+
+      @include for-min-size("md") {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    a > .building-descr {
+      display: none;
+    }
+  }
+
+  &__description {
+  }
+
+  &__navigations {
+  }
+}
+
+.building-descr {
+  margin: 16px 0 0 0;
+
+  @include for-min-size("lg") {
+    margin: 0 0 0 0;
+  }
+
+  &__stage {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__title {
+    margin: 16px 0 0 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    @include for-min-size("md") {
+      font-size: 28px;
+    }
+
+    @include for-min-size("lg") {
+      font-size: 32px;
+    }
+  }
+
+  > p {
+    margin: 16px 0 0 0;
+  }
+}
