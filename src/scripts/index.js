@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = item.querySelector(`.${galleryClass}__progress`);
       const prev = document.querySelector(`.${galleryClass}__button-prev`);
       const next = document.querySelector(`.${galleryClass}__button-next`);
-      const value = progress.querySelector('span');
+      const value = item.querySelector('span');
       const images = [];
       const info = [];
 
