@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonScrollTop = document.querySelector('button[data-scroll-to="top"]');
+  const gallery = document.querySelectorAll('.gallery');
   const sliderBase = document.querySelectorAll('.slider[data-slider="base"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
   const sliderReview = document.querySelectorAll('.slider[data-slider="review"]');
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // filter init
+  // filter: init
   function initFilter(filterClass) {
     const filter = document.querySelector(`.${filterClass}`);
 
@@ -89,13 +90,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // sliders: init progress
-  function updateSliderValue(slider, elem) {
-    const count = slider.getInfo().slideCount - 1;
-    const index = slider.getInfo().displayIndex - 1;
-    const value = elem.querySelector('span');
+  // gallery: change Gallery Content
+  function changeGalleryContent(currnet, images, thumbs, info) {
+    if (images) {
+      images.forEach((item) => (item.style['opacity'] = 0));
+      images[currnet].style['opacity'] = 1;
+    }
 
-    value.style.width = (index / count) * 100 + '%';
+    if (thumbs) {
+      thumbs.forEach((item) => item.classList.remove('--active'));
+      thumbs[currnet].classList.add('--active');
+    }
+
+    if (info) {
+      info.forEach((item) => (item.style['display'] = 'none'));
+      info[currnet].style['display'] = 'block';
+    }
+  }
+
+  // gallery: init
+  function initGallery(galleryClass) {
+    const gallery = document.querySelectorAll(`.${galleryClass}`);
+
+    if (!gallery || gallery.length === 0) return;
+
+    gallery.forEach((item) => {
+      const descr = item.querySelector(`.${galleryClass}__descr-wrapper`);
+      const viewer = item.querySelector(`.${galleryClass}__photo-viewer`);
+      const thumbs = item.querySelectorAll(`.${galleryClass}__thumbnails a`);
+      const progress = item.querySelector(`.${galleryClass}__progress`);
+      const prev = document.querySelector(`.${galleryClass}__button-prev`);
+      const next = document.querySelector(`.${galleryClass}__button-next`);
+      const value = progress.querySelector('span');
+      const images = [];
+      const info = [];
+
+      let currnet = 0;
+
+      thumbs.forEach((item, index) => {
+        const img = document.createElement('img');
+        const inf = document.querySelector(`.${galleryClass}-descr`);
+
+        img.src = item.href;
+        img.style['opacity'] = 0;
+
+        images.push(img);
+        viewer.append(img);
+
+        if (inf) {
+          inf.style['display'] = 'none';
+
+          info.push(inf);
+          descr.append(inf);
+        }
+
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          currnet = index;
+
+          images.forEach((item) => (item.style['opacity'] = 0));
+          thumbs.forEach((item) => item.classList.remove('--active'));
+          images[index].style['opacity'] = 1;
+          item.classList.add('--active');
+
+          if (inf) {
+            info.forEach((item) => (item.style['display'] = 'none'));
+            info[index].style['display'] = 'block';
+          }
+
+          value.style.width = (currnet / (images.length - 1)) * 100 + '%';
+        });
+      });
+
+      images.forEach((item) => (item.style['opacity'] = 0));
+      thumbs[0].classList.add('--active');
+      images[0].style['opacity'] = 1;
+
+      if (info.length > 0) {
+        info.forEach((item) => (item.style['display'] = 'none'));
+        info[0].style['display'] = 'block';
+      }
+
+      if (progress) {
+        value.style.width = (currnet / (images.length - 1)) * 100 + '%';
+
+        prev.addEventListener('click', () => {
+          if (currnet === 0) {
+            currnet = images.length - 1;
+          } else {
+            currnet = currnet - 1;
+          }
+
+          changeGalleryContent(currnet, images, thumbs, info);
+          value.style.width = (currnet / (images.length - 1)) * 100 + '%';
+        });
+
+        next.addEventListener('click', () => {
+          if (currnet === images.length - 1) {
+            currnet = 0;
+          } else {
+            currnet = currnet + 1;
+          }
+
+          changeGalleryContent(currnet, images, thumbs, info);
+          value.style.width = (currnet / (images.length - 1)) * 100 + '%';
+        });
+      }
+    });
   }
 
   // sliders: init
@@ -103,10 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliders.length === 0) return;
 
     sliders.forEach((item) => {
+      const progress = item.querySelector('.slider__progress');
       const container = item.querySelector('.slider__container');
       const buttonPrev = item.querySelector('.slider__button-prev');
       const buttonNext = item.querySelector('.slider__button-next');
-      const progressBar = item.querySelector('.slider__progress');
 
       const slider = tns({
         container: container,
@@ -119,45 +221,23 @@ document.addEventListener('DOMContentLoaded', () => {
         ...props,
       });
 
-      if (progressBar) slider.events.on('indexChanged', () => updateSliderValue(slider, progressBar));
+      if (progress) {
+        slider.events.on('indexChanged', () => {
+          const count = slider.getInfo().slideCount - 1;
+          const index = slider.getInfo().displayIndex - 1;
+          const value = progress.querySelector('span');
+
+          value.style.width = (index / count) * 100 + '%';
+        });
+      }
     });
   }
 
-  initHeader();
-  initMenu('filter');
-  initMenu('menu-primary');
-  initFilter('filter');
-  initSilders(sliderBase, { responsive: { 768: { items: 2 }, 1200: { items: 3 } } });
-  initSilders(sliderMobile, { responsive: { 768: { disable: true } } });
-  initSilders(sliderReview);
-
-  const gallery = document.querySelectorAll('.gallery');
-
   if (gallery.length > 0) {
     gallery.forEach((item) => {
-      const viewer = item.querySelector('.gallery__photo-viewer');
       const container = item.querySelector('.gallery__container');
       const buttonPrev = item.querySelector('.gallery__button-prev');
       const buttonNext = item.querySelector('.gallery__button-next');
-      const thumbnails = container.querySelectorAll('a');
-
-      const images = [];
-
-      thumbnails.forEach((item, index) => {
-        const img = document.createElement('img');
-
-        img.src = item.href;
-        img.style['opacity'] = 0;
-
-        images.push(img);
-        viewer.append(img);
-
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          images.forEach((item) => (item.style['opacity'] = 0));
-          images[index].style['opacity'] = 1;
-        });
-      });
 
       const props = {
         container: container,
@@ -175,8 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const direction = document.documentElement.clientWidth >= 768 ? 'vertical' : 'horizontal';
 
       tns({ ...props, axis: direction });
-      images.forEach((item) => (item.style['opacity'] = 0));
-      images[0].style['opacity'] = 1;
     });
   }
+
+  initHeader();
+  initMenu('filter');
+  initMenu('menu-primary');
+  initFilter('filter');
+  initGallery('gallery');
+  initGallery('building');
+  initSilders(sliderBase, { responsive: { 768: { items: 2 }, 1200: { items: 3 } } });
+  initSilders(sliderMobile, { responsive: { 768: { disable: true } } });
+  initSilders(sliderReview);
 });

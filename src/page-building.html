@@ -107,7 +107,9 @@
 
         <div class="container">
           <div class="building">
+            <!-- Сюда помещается фото -->
             <div class="building__photo-viewer"></div>
+
             <div class="building__thumbnails">
               <a href="https://images.wallpaperscraft.ru/image/single/domik_zima_sneg_134709_1280x720.jpg">
                 <img src="https://images.wallpaperscraft.ru/image/single/domik_zima_sneg_134709_300x168.jpg" alt="" />
@@ -165,8 +167,15 @@
                 </div>
               </a>
             </div>
-            <div class="building__description"></div>
-            <div class="building__navigations"></div>
+
+            <!-- Сюда помещается текст -->
+            <div class="building__descr-wrapper"></div>
+
+            <div class="building__navigations">
+              <button class="building__button-prev button button-round button-round--outline"><i class="icon--caret-left"></i></button>
+              <button class="building__button-next button button-round button-round--outline"><i class="icon--caret-right"></i></button>
+              <div class="building__progress"><span></span></div>
+            </div>
           </div>
         </div>
 
