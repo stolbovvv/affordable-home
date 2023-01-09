@@ -1938,6 +1938,119 @@ i::before {
   }
 }
 
+.building {
+  margin: 16px 0 30px 0;
+}
+@media only screen and (min-width: 768px) {
+  .building {
+    margin: 24px 0 60px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .building {
+    margin: 32px 0 80px 0;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.building__photo-viewer {
+  position: relative;
+  border-radius: 4px;
+  background: #d9d9d9;
+  min-height: 300px;
+  overflow: hidden;
+  flex: 1 1 50%;
+}
+@media only screen and (min-width: 768px) {
+  .building__photo-viewer {
+    min-height: 490px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .building__photo-viewer {
+    order: 2;
+  }
+}
+.building__photo-viewer > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.building__thumbnails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.building__thumbnails > * + * {
+  margin: 0 0 0 18px;
+}
+@media only screen and (min-width: 768px) {
+  .building__thumbnails > * + * {
+    margin: 0 0 0 35px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .building__thumbnails {
+    flex-direction: column;
+    order: 1;
+  }
+  .building__thumbnails > * + * {
+    margin: 35px 0 0 0;
+  }
+}
+.building__thumbnails a > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 768px) {
+  .building__thumbnails a > img {
+    width: 70px;
+    height: 70px;
+  }
+}
+.building__thumbnails a > .building-descr {
+  display: none;
+}
+.building-descr {
+  margin: 16px 0 0 0;
+}
+@media only screen and (min-width: 1024px) {
+  .building-descr {
+    margin: 0 0 0 0;
+  }
+}
+.building-descr__stage {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.building-descr__title {
+  margin: 16px 0 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+@media only screen and (min-width: 768px) {
+  .building-descr__title {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .building-descr__title {
+    font-size: 32px;
+  }
+}
+.building-descr > p {
+  margin: 16px 0 0 0;
+}
+
 /* header */
 .header {
   position: fixed;
