@@ -1984,6 +1984,7 @@ i::before {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  transition: all 0.25s ease 0s;
 }
 .building__thumbnails {
   display: flex;
