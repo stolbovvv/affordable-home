@@ -6,8 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttonScrollTop = document.querySelector('button[data-scroll-to="top"]');
   const gallery = document.querySelectorAll('.gallery');
   const sliderBase = document.querySelectorAll('.slider[data-slider="base"]');
+  const sliderDocs = document.querySelectorAll('.slider[data-slider="docs"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
   const sliderReview = document.querySelectorAll('.slider[data-slider="review"]');
+
+  // Custom range
+  for (let e of document.querySelectorAll('input[type="range"].range-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+  }
 
   // Scroll top
   if (buttonScrollTop) buttonScrollTop.addEventListener('click', () => window.scrollTo({
@@ -221,7 +230,28 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // tabs: init
+  function initTabs(tabsClass) {
+    const wrapper = document.querySelectorAll(".".concat(tabsClass));
+    wrapper.forEach(elem => {
+      const buttons = elem.querySelectorAll(".".concat(tabsClass, "-button"));
+      const content = elem.querySelectorAll(".".concat(tabsClass, "-content"));
+      buttons[0].classList.add('--active');
+      content.forEach(item => item.style.display = 'none');
+      elem.querySelector(buttons[0].hash).style.display = 'block';
+      buttons.forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          buttons.forEach(item => item.classList.remove('--active'));
+          content.forEach(item => item.style.display = 'none');
+          elem.querySelector(btn.hash).style.display = 'block';
+        });
+      });
+    });
+  }
   initHeader();
+  initTabs('tabs');
   initMenu('filter');
   initMenu('menu-primary');
   initFilter('filter');
@@ -234,6 +264,17 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       1200: {
         items: 3
+      }
+    }
+  });
+  initSilders(sliderDocs, {
+    items: 2,
+    responsive: {
+      768: {
+        items: 3
+      },
+      1200: {
+        items: 4
       }
     }
   });
