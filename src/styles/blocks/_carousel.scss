@@ -13,13 +13,16 @@
 
   &__controls {
     display: flex;
-    overflow: hidden;
     overflow-x: auto;
     margin: 16px 0 0 0;
     padding: 0 0 16px 0;
 
     > * + * {
       margin: 0 0 0 24px;
+    }
+
+    > a {
+      flex-shrink: 0;
     }
 
     @include for-min-size("md") {

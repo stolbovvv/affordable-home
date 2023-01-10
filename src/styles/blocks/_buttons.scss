@@ -12,7 +12,8 @@
 }
 
 .button-primary,
-.button-secondary {
+.button-secondary,
+.button-tertiary {
   padding: 6px 18px 6px 18px;
   border-radius: 4px;
   min-height: 38px;
@@ -80,19 +81,20 @@
       color: $clr-primary;
     }
   }
+}
 
-  &--primary {
-    border: 1px solid rgba($color: $clr-primary, $alpha: 0.6);
-    color: $clr-primary;
+.button-tertiary {
+  border: 1px solid rgba($color: $clr-primary, $alpha: 0.6);
+  color: $clr-primary;
 
-    &:hover {
-      background: rgba($color: $clr-primary, $alpha: 0.75);
-      color: $clr-white;
-    }
-    &.--active {
-      background: $clr-primary;
-      color: $clr-white;
-    }
+  &:hover {
+    background: rgba($color: $clr-primary, $alpha: 1);
+    color: $clr-white;
+  }
+
+  &.--active {
+    background: $clr-primary;
+    color: $clr-white;
   }
 }
 
