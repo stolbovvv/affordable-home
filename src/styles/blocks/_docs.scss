@@ -1,0 +1,28 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.document {
+  height: 100%;
+
+  > * + * {
+    margin: 18px 0 0 0;
+  }
+
+  > img {
+    height: 90px;
+
+    @include for-min-size("md") {
+      height: 130px;
+    }
+  }
+
+  > p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+
+    @include for-min-size("md") {
+      font-size: 18px;
+    }
+  }
+}

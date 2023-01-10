@@ -79,11 +79,11 @@
     color: $clr-white;
     text-decoration: none;
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 1.25;
 
     @include for-min-size("lg") {
       font-size: 14px;
-      line-height: 1.2;
+      line-height: 1.25;
 
       &:hover {
         color: $clr-gray;
@@ -141,7 +141,7 @@
 
   &__app-link {
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.25;
     text-decoration: none;
     color: $clr-white;
 
@@ -163,7 +163,7 @@
   &__app-count {
     margin: 0 0 0 6px;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.25;
     color: $clr-white;
   }
 }
@@ -189,7 +189,7 @@
 
   &__link {
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.25;
     color: $clr-white;
     text-decoration: none;
     opacity: 0.5;

@@ -193,7 +193,7 @@
       right: 0px;
       z-index: 1;
       font-size: 16px;
-      line-height: 1.2;
+      line-height: 1.25;
       transform: translateY(-50%);
       opacity: 0.5;
     }
@@ -207,6 +207,8 @@
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         margin: 0;
       }
     }
@@ -234,7 +236,7 @@
     > label {
       position: relative;
       font-size: 16px;
-      line-height: 1.2;
+      line-height: 1.25;
       padding: 0 0 0 26px;
       cursor: pointer;
 

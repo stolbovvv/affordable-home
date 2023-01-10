@@ -187,14 +187,14 @@
   &__stage {
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   &__title {
     margin: 16px 0 0 0;
     font-size: 24px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.25;
     color: $clr-primary;
 
     @include for-min-size("md") {

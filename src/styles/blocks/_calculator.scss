@@ -1,0 +1,189 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.calculator {
+  padding: 16px 16px 16px 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: $clr-white;
+  max-width: 442px;
+
+  @include for-min-size("md") {
+    padding: 32px 32px 32px 32px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: $clr-primary;
+
+    @include for-min-size("md") {
+      font-size: 24px;
+    }
+  }
+
+  &__descr {
+    margin: 12px 0 0 0;
+  }
+
+  &__form {
+    @include for-min-size("md") {
+      margin: 8px 0 0 0;
+    }
+  }
+
+  &__form-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 16px 0 0 0;
+
+    > input[type="number"] {
+      margin: 10px 0 0 0;
+      color: $clr-primary;
+      border: 1px solid rgba($color: $clr-primary, $alpha: 0.5);
+      border-radius: 4px 4px 0px 0px;
+      padding: 11px 18px 10px 18px;
+      outline: none;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+
+      &::placeholder {
+        color: rgba($color: $clr-primary, $alpha: 0.5);
+      }
+
+      @include for-min-size("md") {
+        padding: 15px 18px 14px 18px;
+      }
+    }
+
+    > input[type="range"] {
+      margin: -8px 0 0 0;
+      background-color: transparent;
+    }
+  }
+
+  &__form-input-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: rgba($color: $clr-dark, $alpha: 0.5);
+  }
+
+  &__form-check {
+    margin: 16px 0 0 0;
+    position: relative;
+
+    > input[type="checkbox"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+
+      &:checked + label:after {
+        opacity: 1;
+      }
+    }
+
+    > label {
+      display: flex;
+      position: relative;
+      font-size: 14px;
+      line-height: 1.25;
+      padding: 0 0 0 26px;
+      cursor: pointer;
+
+      @include for-min-size("md") {
+        font-size: 16px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        border: 1px solid $clr-primary;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        background: $clr-dark;
+        transform: translateY(-50%);
+        transition: all 0.25s ease 0s;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0 0 0;
+
+    > * + * {
+      margin: 12px 0 0 0;
+    }
+
+    @include for-min-size("sm") {
+      flex-direction: row;
+
+      > * + * {
+        margin: 0 0 0 30px;
+      }
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #323232;
+    border-radius: 4px;
+    padding: 16px 18px 16px 16px;
+
+    > * + * {
+      margin: 6px 0 0 0;
+    }
+
+    &--primary {
+      background-color: $clr-primary;
+      background-image: $liner-primary;
+      border: none;
+      color: $clr-white;
+    }
+
+    @include for-min-size("sm") {
+      flex: 0 0 calc(50% - 15px);
+    }
+  }
+
+  &__result-label {
+  }
+
+  &__result-value {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+
+    @include for-min-size("md") {
+      font-size: 24px;
+    }
+  }
+}

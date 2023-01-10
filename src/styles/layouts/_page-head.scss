@@ -29,7 +29,7 @@
   &__title {
     font-size: 26px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.25;
 
     @include for-min-size("md") {
       font-size: 32px;
@@ -63,7 +63,7 @@
 
     > span {
       font-size: 16px;
-      line-height: 1.2;
+      line-height: 1.25;
     }
   }
 

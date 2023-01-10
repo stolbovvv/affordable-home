@@ -1,0 +1,103 @@
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type="range"].range-input {
+  height: 16px;
+  -webkit-appearance: none;
+}
+
+/*progress support*/
+input[type="range"].range-input.range-progress {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 16px + var(--ratio) * (100% - 16px));
+}
+
+input[type="range"].range-input:focus {
+  outline: none;
+}
+
+/*webkit*/
+input[type="range"].range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f05d5d, #b51717);
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(2px * 0.5 - 16px * 0.5);
+}
+
+input[type="range"].range-input::-webkit-slider-runnable-track {
+  height: 2px;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff00;
+  box-shadow: none;
+}
+
+input[type="range"].range-input.range-progress::-webkit-slider-runnable-track {
+  background: linear-gradient(135deg, #f05d5d, #b51717) 0 / var(--sx) 100% no-repeat, #ffffff00;
+}
+
+/*mozilla*/
+input[type="range"].range-input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f05d5d, #b51717);
+  border: none;
+  box-shadow: 0 0 2px black;
+}
+
+input[type="range"].range-input::-moz-range-track {
+  height: 2px;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff00;
+  box-shadow: none;
+}
+
+input[type="range"].range-input.range-progress::-moz-range-track {
+  background: linear-gradient(135deg, #f05d5d, #b51717) 0 / var(--sx) 100% no-repeat, #ffffff00;
+}
+
+/*ms*/
+input[type="range"].range-input::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type="range"].range-input::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type="range"].range-input::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f05d5d, #b51717);
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type="range"].range-input::-ms-track {
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff00;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type="range"].range-input.range-progress::-ms-fill-lower {
+  height: 2px;
+  border-radius: 999px 0 0 999px;
+  margin: -undefined 0 -undefined -undefined;
+  background: linear-gradient(135deg, #f05d5d, #b51717);
+  border: none;
+  border-right-width: 0;
+}

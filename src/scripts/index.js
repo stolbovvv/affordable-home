@@ -4,8 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttonScrollTop = document.querySelector('button[data-scroll-to="top"]');
   const gallery = document.querySelectorAll('.gallery');
   const sliderBase = document.querySelectorAll('.slider[data-slider="base"]');
+  const sliderDocs = document.querySelectorAll('.slider[data-slider="docs"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
   const sliderReview = document.querySelectorAll('.slider[data-slider="review"]');
+
+  // custom range
+  for (let e of document.querySelectorAll('input[type="range"].range-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+  }
 
   // Scroll top
   if (buttonScrollTop) buttonScrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -265,6 +274,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery('gallery');
   initGallery('building');
   initSilders(sliderBase, { responsive: { 768: { items: 2 }, 1200: { items: 3 } } });
+  initSilders(sliderDocs, { items: 2, responsive: { 768: { items: 3 }, 1200: { items: 4 } } });
   initSilders(sliderMobile, { responsive: { 768: { disable: true } } });
   initSilders(sliderReview);
+
+  function initTabs(tabsClass) {
+    const buttons = document.querySelectorAll(`.${tabsClass}__buttons`);
+    const content = document.querySelectorAll(`.${tabsClass}__content`);
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.classList.remove('--active');
+        btn.classList.add('--active');
+      });
+    });
+  }
 });

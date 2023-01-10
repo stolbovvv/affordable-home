@@ -1,0 +1,168 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.calculation {
+  margin: 15px 0 15px 0;
+  padding: 60px 0 30px 0;
+  background-color: $clr-primary;
+  background-image: $liner-primary;
+
+  @include for-min-size("md") {
+    margin: 30px 0 30px 0;
+    padding: 60px 0 60px 0;
+  }
+
+  @include for-min-size("md") {
+    padding: 80px 0 80px 0;
+    margin: 40px 0 40px 0;
+  }
+
+  &__head {
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: $clr-white;
+
+    @include for-min-size("md") {
+      font-size: 32px;
+      max-width: 60%;
+    }
+  }
+
+  &__descr {
+    margin: 16px 0 0 0;
+    color: $clr-white;
+
+    @include for-min-size("md") {
+      max-width: 60%;
+    }
+  }
+
+  &__body {
+    margin: 16px 0 0 0;
+
+    @include for-min-size("md") {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__calc {
+    @include for-min-size("lg") {
+      flex: 0 0 auto;
+      margin: 0 0 0 32px;
+    }
+  }
+
+  &__info {
+    align-self: stretch;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__items {
+    > * {
+      margin: 16px 0 0 0;
+    }
+
+    @include for-min-size("md") {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 420px;
+
+      > * {
+        margin: 24px 0 0 0;
+        flex: 0 0 calc(50% - 8px);
+      }
+    }
+  }
+
+  &__other {
+    margin: 24px 0 0 0;
+
+    > * + * {
+      margin: 24px 0 0 0;
+    }
+  }
+
+  &__other-title {
+    color: $clr-white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+
+    @include for-min-size("md") {
+      font-size: 18px;
+    }
+  }
+
+  &__other-calc {
+    display: flex;
+    align-items: center;
+    margin: 12px 0 0 0;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-bottom: 1px solid rgba($color: $clr-gray, $alpha: 0.5);
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    max-width: 352px;
+    width: 100%;
+
+    > img {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    > span {
+      flex: 1 1 auto;
+      margin: 0 0 0 10px;
+      color: $clr-white;
+    }
+    &:hover > img {
+    }
+    &:hover > span {
+      color: $clr-accent;
+    }
+  }
+
+  &__button {
+    margin: 16px 0 0 0;
+  }
+}
+
+.calculation-item {
+  display: flex;
+  flex-direction: column;
+
+  > * + * {
+    margin: 8px 0 0 0;
+  }
+  &__value {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: $clr-white;
+
+    @include for-min-size("md") {
+      font-size: 24px;
+    }
+  }
+
+  &__label {
+    color: $clr-white;
+
+    @include for-min-size("md") {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+}

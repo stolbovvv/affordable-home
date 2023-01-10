@@ -38,6 +38,10 @@
     @include for-min-size("lg") {
       margin-right: 32px;
     }
+
+    &[style="display: none;"] + .slider__progress {
+      opacity: 0;
+    }
   }
 
   &__progress {

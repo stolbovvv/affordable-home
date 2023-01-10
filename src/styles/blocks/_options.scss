@@ -1,0 +1,95 @@
+@use "../tools/config" as *;
+@use "../tools/mixins" as *;
+
+.options {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 15px 0;
+
+  > * + * {
+    margin: 32px 0 0 0;
+  }
+
+  @include for-min-size("md") {
+    padding: 30px 0 30px 0;
+  }
+
+  @include for-min-size("lg") {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0 40px 0;
+
+    > * {
+      flex: 0 0 calc(50% - 16px);
+    }
+
+    > * + * {
+      margin: 0 0 0 32px;
+    }
+  }
+}
+
+.options-card {
+  border-radius: 4px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  background: $clr-white;
+  padding: 15px 25px 15px 25px;
+  overflow: hidden;
+
+  @include for-min-size("sm") {
+    position: relative;
+    padding: 40px 40px 40px 40px;
+    display: flex;
+    align-items: center;
+    min-height: 430px;
+  }
+
+  &__img {
+    width: 100%;
+
+    @include for-min-size("sm") {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      width: auto;
+      height: 350px;
+      flex: 0 0 auto;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__body {
+    margin: 30px 0 0 0;
+
+    > * + * {
+      margin: 24px 0 0 0;
+    }
+
+    @include for-min-size("sm") {
+      position: relative;
+      width: 50%;
+      margin: 0 0 0 auto;
+    }
+
+    @include for-min-size("lg") {
+      width: 60%;
+    }
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+
+    > span {
+      color: $clr-primary;
+    }
+
+    @include for-min-size("md") {
+      font-size: 28px;
+    }
+  }
+
+  &__descr {
+  }
+}

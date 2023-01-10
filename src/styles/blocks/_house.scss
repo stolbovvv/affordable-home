@@ -7,7 +7,7 @@
   &__name {
     font-size: 24px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 1.25;
     color: $clr-primary;
   }
 
@@ -129,7 +129,7 @@
   &__value {
     font-size: 24px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.25;
     color: $clr-primary;
   }
 
@@ -165,11 +165,14 @@
   }
 
   &__calc {
-    border-bottom: 1px solid rgba($color: #323232, $alpha: 0.5);
-    padding: 10px 0 10px 0;
     display: flex;
     align-items: center;
     margin: 12px 0 0 0;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-bottom: 1px solid rgba($color: #323232, $alpha: 0.5);
+    background: none;
+    text-align: left;
     cursor: pointer;
 
     > img {
@@ -196,7 +199,7 @@
   &__title {
     font-size: 24px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 1.25;
   }
 
   &__images {

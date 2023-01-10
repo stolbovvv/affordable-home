@@ -16,6 +16,7 @@
 @use "./blocks/menu";
 @use "./blocks/slider";
 @use "./blocks/cards";
+@use "./blocks/docs";
 @use "./blocks/filter";
 @use "./blocks/gallery";
 @use "./blocks/banner-hero";
@@ -33,6 +34,10 @@
 @use "./blocks/information";
 @use "./blocks/not-found";
 @use "./blocks/policy";
+@use "./blocks/range";
+@use "./blocks/calculator";
+@use "./blocks/calculation";
+@use "./blocks/options";
 
 // 3. Layout-related sections
 @use "./layouts/header";
