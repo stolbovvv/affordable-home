@@ -282,7 +282,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll(`.${tabsClass}__buttons`);
     const content = document.querySelectorAll(`.${tabsClass}__content`);
 
+    const tabs = {};
+
     buttons.forEach((btn) => {
+      tabs[btn.getAttribute('data-tabs-type')];
+
       btn.addEventListener('click', () => {
         buttons.classList.remove('--active');
         btn.classList.add('--active');
