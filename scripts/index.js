@@ -286,4 +286,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   initSilders(sliderReview);
+  function initModal(modal) {
+    if (!modal) return;
+    const open = document.querySelectorAll("[data-open-modal=\"".concat(modal.id, "\"]"));
+    const close = document.querySelectorAll("[data-close-modal=\"".concat(modal.id, "\"]"));
+    open.forEach(item => item.addEventListener('click', () => {
+      modal.classList.add('--active');
+      document.body.style.overflow = 'hidden';
+    }));
+    close.forEach(item => item.addEventListener('click', () => {
+      modal.classList.remove('--active');
+      document.body.style.overflow = 'auto';
+    }));
+    modal.addEventListener('click', e => {
+      if (e.target && e.target.classList.contains('modal')) {
+        modal.classList.remove('--active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  }
+  const modalQuestion = document.querySelector('#modal-questions');
+  const modalCalculator = document.querySelector('#modal-calculator');
+  initModal(modalQuestion);
+  initModal(modalCalculator);
 });
