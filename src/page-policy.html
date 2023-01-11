@@ -50,14 +50,16 @@
                 <a class="header__app-link-icon" href="page-favourites.html"><i class="icon--heart-outline"></i></a>
               </div>
               <button class="header__button-menu button" data-open-menu="menu-primary"><i class="icon--hamburger"></i></button>
-              <button class="header__button-send button button-primary" data-open-modal="modal-send"><span>Оставить заявку</span></button>
+              <button class="header__button-send button button-primary" data-open-modal="modal-questions">
+                <span>Оставить заявку</span>
+              </button>
             </div>
           </div>
         </section>
         <section class="header__menu">
           <div class="container">
             <nav class="menu-primary" id="menu-primary">
-              <button class="menu-primary__button-close" data-close-menu="menu-primary"><i class="icon--colse"></i></button>
+              <button class="menu-primary__button-close" data-close-menu="menu-primary"><i class="icon--close"></i></button>
               <ul class="menu-primary__list">
                 <li><a class="menu-primary__link" href="page-catalog.html">Каталог</a></li>
                 <li><a class="menu-primary__link" href="page-rent.html">Аренда с выкупом</a></li>
@@ -72,7 +74,7 @@
                 <a class="menu-primary__link-icon" href="https://telegram.org/"><i class="icon--telegram"></i></a>
               </div>
               <div class="menu-primary__button-send-container">
-                <button class="button button-secondary button-secondary--white" data-open-modal="modal-send">
+                <button class="button button-secondary button-secondary--white" data-open-modal="modal-questions">
                   <span>Оставить заявку</span>
                 </button>
               </div>
@@ -212,7 +214,7 @@
               </div>
             </div>
             <div class="footer__controls">
-              <button class="button button-primary" data-open-modal="modal-send"><span>Оставить заявку</span></button>
+              <button class="button button-primary" data-open-modal="modal-questions"><span>Оставить заявку</span></button>
               <button class="button button-round button-round--white" data-scroll-to="top"><i class="icon--caret-up"></i></button>
             </div>
           </div>
@@ -223,6 +225,64 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="modal-questions">
+      <div class="modal__dialog">
+        <button class="modal__button-close" data-close-modal="modal-questions"></button>
+        <div class="modal__body">
+          <p class="modal__title">Остались вопросы?</p>
+          <p class="modal__descr">Оставьте свои данные и мыперезвоним вам в течении 24 часов</p>
+          <form class="modal__form" action="#">
+            <input type="text" name="client-name" placeholder="Введите ваше имя" required />
+            <input type="tel" name="client-phone" placeholder="Введите ваш телефон" required />
+            <button class="button button-primary" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-calculator">
+      <div class="modal__dialog">
+        <button class="modal__button-close" data-close-modal="modal-calculator"></button>
+        <div class="calculator">
+          <p class="calculator__title">Ипотека с первоначальным взносом</p>
+          <p class="calculator__descr">Рассчитайте стоимость ежемесячного платежа</p>
+          <form class="calculator__form" action="#">
+            <div class="calculator__form-input">
+              <div class="calculator__form-input-head">
+                <span>Первоначальный взнос</span>
+                <span>от 10%</span>
+              </div>
+              <input type="number" name="contribution" placeholder="0" min="0" max="10000000" />
+              <input class="range-input range-progress" type="range" />
+            </div>
+            <div class="calculator__form-check">
+              <input type="checkbox" name="sber-client" id="sber-client" />
+              <label for="sber-client">Являюсь зарплатным клиентом Сбербанка</label>
+            </div>
+            <div class="calculator__form-input">
+              <div class="calculator__form-input-head">
+                <span>Срок</span>
+                <span>до 30 лет</span>
+              </div>
+              <input type="number" name="contribution" placeholder="0" min="1" max="30" />
+              <input class="range-input range-progress" type="range" />
+            </div>
+          </form>
+          <div class="calculator__footer">
+            <div class="calculator__result calculator__result--primary" data-calc="payment">
+              <span class="calculator__result-label">Ежемесячный платеж</span>
+              <span class="calculator__result-value">34 114</span>
+            </div>
+            <div class="calculator__result" data-calc="income">
+              <span class="calculator__result-label">Необходимый доход</span>
+              <span class="calculator__result-value">56 857</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Connecting Libs Scripts -->
