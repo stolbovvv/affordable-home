@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderDocs = document.querySelectorAll('.slider[data-slider="docs"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
   const sliderReview = document.querySelectorAll('.slider[data-slider="review"]');
+  const modalQuestion = document.querySelector('#modal-questions');
+  const modalCalculator = document.querySelector('#modal-calculator');
 
   // Custom range
   for (let e of document.querySelectorAll('input[type="range"].range-progress')) {
@@ -292,18 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  initHeader();
-  initTabs('tabs');
-  initMenu('filter');
-  initMenu('menu-primary');
-  initFilter('filter');
-  initGallery('gallery');
-  initGallery('building');
-  initSilders(sliderBase, { responsive: { 768: { items: 2 }, 1200: { items: 3 } } });
-  initSilders(sliderDocs, { items: 2, responsive: { 768: { items: 3 }, 1200: { items: 4 } } });
-  initSilders(sliderMobile, { responsive: { 768: { disable: true } } });
-  initSilders(sliderReview);
-
   function initModal(modal) {
     if (!modal) return;
 
@@ -331,9 +321,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const modalQuestion = document.querySelector('#modal-questions');
-  const modalCalculator = document.querySelector('#modal-calculator');
-
+  initHeader();
+  initTabs('tabs');
+  initMenu('filter');
+  initMenu('menu-primary');
+  initFilter('filter');
+  initGallery('gallery');
+  initGallery('building');
+  initSilders(sliderBase, { responsive: { 768: { items: 2 }, 1200: { items: 3 } } });
+  initSilders(sliderDocs, { items: 2, responsive: { 768: { items: 3 }, 1200: { items: 4 } } });
+  initSilders(sliderMobile, { responsive: { 768: { disable: true } } });
+  initSilders(sliderReview);
   initModal(modalQuestion);
   initModal(modalCalculator);
+
+  // SCRIPT FOR APP MAP
+  const mapMarkers = document.querySelectorAll('.map-marker');
+  const mapSidebar = document.querySelector('.map-app-sidebar');
+
+  if (mapSidebar && mapMarkers && mapMarkers.length > 0) {
+    mapMarkers.forEach((item) => {
+      item.addEventListener('click', () => mapSidebar.classList.add('--active'));
+    });
+
+    mapSidebar.addEventListener('click', (e) => {
+      if (e.target && e.target.classList.contains('map-app-sidebar__close')) mapSidebar.classList.remove('--active');
+    });
+  }
 });
