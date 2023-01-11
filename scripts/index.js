@@ -55,12 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const open = document.querySelector("[data-open-menu=".concat(menu.id, "]"));
     const close = document.querySelector("[data-close-menu=".concat(menu.id, "]"));
     open.addEventListener('click', () => {
-      menu.classList.toggle("".concat(menuClass, "--show"));
-      body.classList.toggle('--lock');
+      menu.classList.add("".concat(menuClass, "--show"));
+      document.body.classList.add('--menu-open');
+      document.body.style.overflow = 'hidden';
     });
     close.addEventListener('click', () => {
       menu.classList.remove("".concat(menuClass, "--show"));
-      body.classList.remove('--lock');
+      document.body.classList.remove('--open');
+      document.body.style.overflow = 'auto';
     });
   }
 
@@ -262,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
     close.forEach(item => item.addEventListener('click', () => {
       modal.classList.remove('--active');
-      document.body.style.overflow = 'auto';
+      if (!document.body.classList.contains('--menu-open')) document.body.style.overflow = 'auto';
     }));
     modal.addEventListener('click', e => {
       if (e.target && e.target.classList.contains('modal')) {
