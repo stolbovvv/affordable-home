@@ -59,13 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const close = document.querySelector(`[data-close-menu=${menu.id}]`);
 
     open.addEventListener('click', () => {
-      menu.classList.toggle(`${menuClass}--show`);
-      body.classList.toggle('--lock');
+      menu.classList.add(`${menuClass}--show`);
+      document.body.classList.add('--menu-open');
+      document.body.style.overflow = 'hidden';
     });
 
     close.addEventListener('click', () => {
       menu.classList.remove(`${menuClass}--show`);
-      body.classList.remove('--lock');
+      document.body.classList.remove('--open');
+      document.body.style.overflow = 'auto';
     });
   }
 
@@ -309,7 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
     close.forEach((item) =>
       item.addEventListener('click', () => {
         modal.classList.remove('--active');
-        document.body.style.overflow = 'auto';
+
+        if (!document.body.classList.contains('--menu-open')) document.body.style.overflow = 'auto';
       }),
     );
 
