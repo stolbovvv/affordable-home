@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderDocs = document.querySelectorAll('.slider[data-slider="docs"]');
   const sliderMobile = document.querySelectorAll('.slider[data-slider="mobile"]');
   const sliderReview = document.querySelectorAll('.slider[data-slider="review"]');
+  const modalQuestion = document.querySelector('#modal-questions');
+  const modalCalculator = document.querySelector('#modal-calculator');
 
   // Custom range
   for (let e of document.querySelectorAll('input[type="range"].range-progress')) {
@@ -250,6 +252,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  function initModal(modal) {
+    if (!modal) return;
+    const open = document.querySelectorAll("[data-open-modal=\"".concat(modal.id, "\"]"));
+    const close = document.querySelectorAll("[data-close-modal=\"".concat(modal.id, "\"]"));
+    open.forEach(item => item.addEventListener('click', () => {
+      modal.classList.add('--active');
+      document.body.style.overflow = 'hidden';
+    }));
+    close.forEach(item => item.addEventListener('click', () => {
+      modal.classList.remove('--active');
+      document.body.style.overflow = 'auto';
+    }));
+    modal.addEventListener('click', e => {
+      if (e.target && e.target.classList.contains('modal')) {
+        modal.classList.remove('--active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  }
   initHeader();
   initTabs('tabs');
   initMenu('filter');
@@ -286,27 +307,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   initSilders(sliderReview);
-  function initModal(modal) {
-    if (!modal) return;
-    const open = document.querySelectorAll("[data-open-modal=\"".concat(modal.id, "\"]"));
-    const close = document.querySelectorAll("[data-close-modal=\"".concat(modal.id, "\"]"));
-    open.forEach(item => item.addEventListener('click', () => {
-      modal.classList.add('--active');
-      document.body.style.overflow = 'hidden';
-    }));
-    close.forEach(item => item.addEventListener('click', () => {
-      modal.classList.remove('--active');
-      document.body.style.overflow = 'auto';
-    }));
-    modal.addEventListener('click', e => {
-      if (e.target && e.target.classList.contains('modal')) {
-        modal.classList.remove('--active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-  }
-  const modalQuestion = document.querySelector('#modal-questions');
-  const modalCalculator = document.querySelector('#modal-calculator');
   initModal(modalQuestion);
   initModal(modalCalculator);
+
+  // SCRIPT FOR APP MAP
+  const mapMarkers = document.querySelectorAll('.map-marker');
+  const mapSidebar = document.querySelector('.map-app-sidebar');
+  if (mapSidebar && mapMarkers && mapMarkers.length > 0) {
+    mapMarkers.forEach(item => {
+      item.addEventListener('click', () => mapSidebar.classList.add('--active'));
+    });
+    mapSidebar.addEventListener('click', e => {
+      if (e.target && e.target.classList.contains('map-app-sidebar__close')) mapSidebar.classList.remove('--active');
+    });
+  }
 });

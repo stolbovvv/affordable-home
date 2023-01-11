@@ -3834,3 +3834,141 @@ input[type=range].range-input.range-progress::-ms-fill-lower {
     flex: 0 0 calc(25% - 16px);
   }
 }
+
+#map-app-container {
+  position: relative;
+}
+#map-app-container + footer {
+  margin: 0 0 0 0;
+}
+
+.map-app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.map-app__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.map-app__markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.map-app__markers > * {
+  position: absolute;
+}
+.map-app__markers > *:nth-child(1) {
+  top: 10vh;
+  left: 20vw;
+}
+.map-app__markers > *:nth-child(2) {
+  top: 50vh;
+  left: 50vw;
+}
+.map-app__markers > *:nth-child(3) {
+  top: 70vh;
+  left: 70vw;
+}
+.map-app__markers > *:nth-child(4) {
+  top: 30vh;
+  left: 40vw;
+}
+.map-app__markers > *:nth-child(5) {
+  top: 40vh;
+  left: 60vw;
+}
+
+.map-marker {
+  color: #008f53;
+  font-size: 24px;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease 0s;
+  cursor: pointer;
+}
+.map-marker:hover {
+  transform: scale(1.25);
+}
+
+.map-app-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 320px;
+  max-width: 414px;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: all 0.25s ease 0s;
+}
+.map-app-sidebar.--active {
+  transform: translateX(0%);
+}
+.map-app-sidebar__head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px 0 15px;
+}
+.map-app-sidebar__label {
+  font-size: 16px;
+  line-height: 1.25;
+}
+.map-app-sidebar__close {
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .map-app-sidebar__close {
+    right: -30px;
+  }
+}
+.map-app-sidebar__close::before, .map-app-sidebar__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #333333;
+  transform: translate(-50%, -50%);
+}
+.map-app-sidebar__close::before {
+  width: 100%;
+  height: 2px;
+}
+.map-app-sidebar__close::after {
+  height: 100%;
+  width: 2px;
+}
+.map-app-sidebar__list {
+  flex: 1 1 auto;
+  margin: 20px 0 0 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px 30px 15px;
+  overflow-y: scroll;
+}
+.map-app-sidebar__list > * + * {
+  margin: 25px 0 0 0;
+}
